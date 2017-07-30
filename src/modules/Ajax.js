@@ -13,19 +13,11 @@
  * - headerValue (value of the custom HTTP header)
  */
 
-	$.ajax = opts => {
-		
-		let { method, url, async, success, error, header, headerValue } = opts;
+	$.ajax = function(opts) {
 
 		if (typeof opts !== 'object') throw new Error('XHR properties are not properly defined.');
 
-		method   	= method !== undefined   	? method   	  : null;
-		url      	= url !== undefined      	? url      	  : null;
-		async    	= async !== undefined    	? async    	  : true;
-		success  	= success !== undefined  	? success  	  : () => {};
-		error    	= error !== undefined	 	? error	 	  : () => {};
-		header 	 	= header !== undefined 	 	? header 	  : 'Content-Type';
-		headerValue = headerValue !== undefined ? headerValue : 'application/x-www-form-urlencoded; charset=UTF-8';
+		let { method = null, url = null, async = true, success = () => {}, error = () => {}, header = 'Content-Type', headerValue = 'application/x-www-form-urlencoded; charset=UTF-8' } = opts;
 		
 		const xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = () => {

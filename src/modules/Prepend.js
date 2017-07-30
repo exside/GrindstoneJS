@@ -4,8 +4,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.prepend = element => {
-		this.each(() => {
+	$.fn.prepend = function(element) {
+		this.each(function() {
 			if (typeof element === 'string') {
 				if (element.match(/(<).+(>)/)) {
 					this.insertAdjacentHTML('afterbegin', element);

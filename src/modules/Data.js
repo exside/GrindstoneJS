@@ -5,15 +5,15 @@
  * @returns {object|number} current instance of Grindstone or the current data-value of an element
  */
 
-	$.fn.data = (valueName, valueContent) => {
+	$.fn.data = function(valueName, valueContent) {
 		if (valueContent) {
-			this.each(() => {
+			this.each(function() {
 				$(this).attr(`data-${valueName}`, valueContent);
 			});
 			return this;
 		} else {
 			let elemValue;
-			this.each(() => {
+			this.each(function() {
 				elemValue = $(this).attr(`data-${valueName}`);
 			});
 			return elemValue;
@@ -26,8 +26,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.removeData = valueName => {
-		this.each(() => {
+	$.fn.removeData = function(valueName) {
+		this.each(function() {
 			$(this).removeAttr(`data-${valueName}`);
 		});
 		return this;

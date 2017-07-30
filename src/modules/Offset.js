@@ -4,7 +4,7 @@
  * @returns {number} offset value in px
  */
 
-	$.fn.offset = position => {
+	$.fn.offset = function(position) {
 		if (position && typeof position === 'string') {
 			if (position !== 'left' && position !== 'top') {
 				throw new Error('offset() position must be either "left" or "top".');

@@ -4,7 +4,7 @@
  * @returns {object} parents instance of Grindstone
  */
 
-	$.fn.parent = selector => {
+	$.fn.parent = function(selector) {
 		return priv.elementProp(this, 'parentNode', selector);
 	};
 
@@ -14,7 +14,7 @@
  * @returns {object} instance of Grindstone
  */
 
-	$.fn.next = selector => {
+	$.fn.next = function(selector) {
 		return priv.elementProp(this, 'nextSibling', selector);
 	};
 
@@ -24,7 +24,7 @@
  * @returns {object} instance of Grindstone
  */
 
-	$.fn.prev = selector => {
+	$.fn.prev = function(selector) {
 		return priv.elementProp(this, 'previousSibling', selector);
 	};
 
@@ -34,7 +34,7 @@
  * @returns {object} children instance of Grindstone
  */
 
-	$.fn.children = selector => {
+	$.fn.children = function(selector) {
 		return priv.children(this, 1, selector);
 	};
 
@@ -43,6 +43,6 @@
  * @returns {object} children instance of Grindstone
  */
 
-	$.fn.contents = () => {
+	$.fn.contents = function() {
 		return priv.children(this);
 	};

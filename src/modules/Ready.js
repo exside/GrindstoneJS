@@ -4,9 +4,9 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.ready = callback => {
+	$.fn.ready = function(callback) {
 		if (typeof callback === 'function') {
-			this.each(() => {
+			this.each(function() {
 				$(this).on('DOMContentLoaded', callback);
 			});
 		}
@@ -19,9 +19,9 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.load = callback => {
+	$.fn.load = function(callback) {
 		if (typeof callback === 'function') {
-			this.each(() => {
+			this.each(function() {
 				$(this).on('load', callback);
 			});
 		}

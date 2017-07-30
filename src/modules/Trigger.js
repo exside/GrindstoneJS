@@ -4,9 +4,9 @@
  * @returns {object|number} current instance of Grindstone or top offset
  */
 
-	$.fn.trigger = evt => {
+	$.fn.trigger = function(evt) {
 		const customEvent = new Event(evt);
-		this.each(() => {
+		this.each(function() {
 			this.dispatchEvent(customEvent);
 		});
 		return this;

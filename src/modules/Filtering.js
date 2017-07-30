@@ -4,7 +4,7 @@
  * @returns {boolean} true if at least one of the elements matches the given selector
  */
 
-	$.fn.is = filterBy => {
+	$.fn.is = function(filterBy) {
         if (typeof filterBy === 'function') {
             for (let i = 0; i < this.length; i++) {
                 if (filterBy.call(this[i], i, this[i])) return true;
@@ -23,7 +23,7 @@
  * @returns {object} Grindstone object of included values returned from the callback
  */
 
-	$.fn.map = callback => {
+	$.fn.map = function(callback) {
         const newSet = $();
         for (let i = 0; i < this.length; i++) {
             let ret = callback.call(this[i]);
@@ -38,8 +38,8 @@
  * @returns {object} new instance of Grindstone with the reduced set of matching elements
  */
 
-	$.fn.filter = filterBy => {
-        return $.fn.map.call(this, () => {
+	$.fn.filter = function(filterBy) {
+        return $.fn.map.call(this, function() {
             if ($(this).is(filterBy)) return this;
         });
 	};
@@ -50,8 +50,8 @@
  * @returns {boolean} new instance of Grindstone with the reduced set of not matching elements
  */
 
-	$.fn.not = filterBy => {
-        return $.fn.map.call(this, () => {
+	$.fn.not = function(filterBy) {
+        return $.fn.map.call(this, function() {
             if (!$(this).is(filterBy)) return this;
         });
 	};
@@ -61,7 +61,7 @@
  * @returns {object} new instance of Grindstone with the first element
  */
 
-    $.fn.first = () => {
+    $.fn.first = function() {
         return $(this.set[0]);
     };
 
@@ -70,6 +70,6 @@
  * @returns {object} new instance of Grindstone with the last element
  */
 
-    $.fn.last = () => {
+    $.fn.last = function() {
         return $(this.set[this.set.length - 1]);
     };

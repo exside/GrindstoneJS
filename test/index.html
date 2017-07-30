@@ -149,12 +149,12 @@
 							method: 'GET',
 							url: 'ajax-test.html',
 							async: true,
-							success: function(xmlhttp) {
-								var text = xmlhttp.responseText;
+							success: function(xhr) {
+								var text = xhr.responseText;
 								state.dom.$emptyArticle.html(text);
 							},
-							error: function(xmlhttp) {
-								console.log(xmlhttp);
+							error: function(xhr) {
+								console.log(xhr);
 							}
 						});
 					};
@@ -276,11 +276,11 @@
 					var divs = $('div');
 					var emptyDivs = $('div', '#test-div');
 					
-					el.on(state.interaction(), state.eventHandlers.mapTest);
+					el.on(state.interaction(), state.eventHandlers.ajaxTest);
 					el2.on(state.interaction(), state.eventHandlers.removeTest);
 					
 					$('.mouseable').mouseable();
-					
+					// $('.mouseable').mouseable({ hoverClass: 'testing' });
 				};
 				
 				var init = function() {

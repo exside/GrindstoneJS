@@ -4,8 +4,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.before = content => {
-		this.each(() => {
+	$.fn.before = function(content) {
+		this.each(function() {
 			if (typeof content === 'string') {
 				if (content.match(/(<).+(>)/)) {
 					this.insertAdjacentHTML('beforebegin', content);
@@ -30,8 +30,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.after = content => {
-		this.each(() => {
+	$.fn.after = function(content) {
+		this.each(function() {
 			if (typeof content === 'string') {
 				if (content.match(/(<).+(>)/)) {
 					this.insertAdjacentHTML('afterend', content);

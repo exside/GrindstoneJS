@@ -1,16 +1,15 @@
 /**
  * Create hover and active states
- * @param {object} classes - hoverClass => value, activeClass => value, optional
+ * @param {object} classes - { hoverClass: 'string', activeClass: 'string' }, optional
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.mouseable = (classes) => {
-		
-		let { hoverClass, activeClass } = classes;
+	$.fn.mouseable = function(classes) {
 
 		if (classes && typeof classes !== 'object') throw new Error('Classes parameter for mouseable() must be an object with properties "hoverClass" and/or "activeClass".');
-		hoverClass  = classes && hoverClass !== undefined  ? classes['hoverClass']  : 'over';
-		activeClass = classes && activeClass !== undefined ? classes['activeClass'] : 'down';
+
+		let hoverClass  = classes && classes.hasOwnProperty('hoverClass')  ? classes['hoverClass']  : 'over';
+		let activeClass = classes && classes.hasOwnProperty('activeClass') ? classes['activeClass'] : 'down';
 		
 		const events = {
 			hover:  priv.createInteraction('touchstart', 'mouseenter'),
@@ -19,8 +18,7 @@
 			up: 	priv.createInteraction('touchend', 'mouseup mouseleave')
 		};
 		
-		this.each(() => {
-
+		this.each(function() {
 			$(this)
 				.on(events.hover, () => {
 					$(this).addClass(hoverClass);

@@ -5,9 +5,9 @@
  * @returns {object|string} current instance of Grindstone or style value
  */
 
-	$.fn.css = (styles, value) => {
+	$.fn.css = function(styles, value) {
 		let returnedStyle, returnStyle;
-		this.each(() => {
+		this.each(function() {
 			if (typeof styles === 'object') {
 				const self = this;
 				const stl = Object.keys(styles);

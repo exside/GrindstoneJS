@@ -4,8 +4,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.replaceWith = content => {
-		this.each(() => {
+	$.fn.replaceWith = function(content) {
+		this.each(function() {
 			this.outerHTML = content ? content : '';
 		});
 		return this;

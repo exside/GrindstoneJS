@@ -4,7 +4,7 @@
  * @returns {object} current instance of Grindstone
  */
 	
-	$.fn.each = callback => {
+	$.fn.each = function(callback) {
 		let set = this.set;
 		set = Array.prototype.slice.call(set);
 		set.forEach(item => {

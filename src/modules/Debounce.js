@@ -6,9 +6,9 @@
  * @returns {function} invoke debounce
  */
 
-	$.debounce = (fn, wait, immediate) => {
+	$.debounce = function(fn, wait, immediate) {
 		let timeout;
-		const debounce = () => {
+		const debounce = function() {
 			const context = this;
 			const args = arguments;
 			const later = () => {

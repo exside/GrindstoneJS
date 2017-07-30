@@ -4,9 +4,9 @@
  * @returns {object|number} current instance of Grindstone or current height of the first element
  */
 
-	$.fn.height = num => {
+	$.fn.height = function(num) {
 		if (typeof num === 'number' || num === 0) {
-			this.each(() => {
+			this.each(function() {
 				this.style.height = `${num}px`;
 			});
 			return this;
@@ -28,9 +28,9 @@
  * @returns {object|number} current instance of Grindstone or current width of the first element in the set
  */
 
-	$.fn.width = num => {
+	$.fn.width = function(num) {
 		if (typeof num === 'number' || num === 0) {
-			this.each(() => {
+			this.each(function() {
 				this.style.width = `${num}px`;
 			});
 			return this;

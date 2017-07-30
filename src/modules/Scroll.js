@@ -4,9 +4,9 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.scroll = callback => {
+	$.fn.scroll = function(callback) {
 		if (typeof callback === 'function') {
-			this.each(() => {
+			this.each(function() {
 				$(this).on('scroll', callback);
 			});
 		}
@@ -20,9 +20,9 @@
  * @returns {object|number} current instance of Grindstone or top offset
  */
 
-	$.fn.scrollTop = top => {
+	$.fn.scrollTop = function(top) {
 		let topOffset;
-		this.each(() => {
+		this.each(function() {
 			switch (this) {
 			case w:
 				if (typeof top === 'number') {
@@ -56,9 +56,9 @@
  * @returns {object|number} current instance of Grindstone or left offset
  */
 
-	$.fn.scrollLeft = left => {
+	$.fn.scrollLeft = function(left) {
 		let leftOffset;
-		this.each(() => {
+		this.each(function() {
 			switch (this) {
 			case w:
 				if (typeof left === 'number') {

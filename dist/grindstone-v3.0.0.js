@@ -11,9 +11,10 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-((w, d) => {
+(function(w, d) {
 
 // @TODO: HAVE THIS CLOSURE BUILT DYNAMICALLY W/ BABEL AND REMOVE THE PHYSICAL INTRO/OUTRO FILES
+
 /**
  * Library core: constructor, prototype
  * @param {string|object} selector
@@ -121,24 +122,24 @@ var priv = {
  */
 
 $.ajax = function (opts) {
-	var method = opts.method,
-	    url = opts.url,
-	    async = opts.async,
-	    success = opts.success,
-	    error = opts.error,
-	    header = opts.header,
-	    headerValue = opts.headerValue;
-
 
 	if ((typeof opts === 'undefined' ? 'undefined' : _typeof(opts)) !== 'object') throw new Error('XHR properties are not properly defined.');
 
-	method = method !== undefined ? method : null;
-	url = url !== undefined ? url : null;
-	async = async !== undefined ? async : true;
-	success = success !== undefined ? success : function () {};
-	error = error !== undefined ? error : function () {};
-	header = header !== undefined ? header : 'Content-Type';
-	headerValue = headerValue !== undefined ? headerValue : 'application/x-www-form-urlencoded; charset=UTF-8';
+	var _opts$method = opts.method,
+	    method = _opts$method === undefined ? null : _opts$method,
+	    _opts$url = opts.url,
+	    url = _opts$url === undefined ? null : _opts$url,
+	    _opts$async = opts.async,
+	    async = _opts$async === undefined ? true : _opts$async,
+	    _opts$success = opts.success,
+	    success = _opts$success === undefined ? function () {} : _opts$success,
+	    _opts$error = opts.error,
+	    error = _opts$error === undefined ? function () {} : _opts$error,
+	    _opts$header = opts.header,
+	    header = _opts$header === undefined ? 'Content-Type' : _opts$header,
+	    _opts$headerValue = opts.headerValue,
+	    headerValue = _opts$headerValue === undefined ? 'application/x-www-form-urlencoded; charset=UTF-8' : _opts$headerValue;
+
 
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function () {
@@ -449,10 +450,10 @@ $.fn.show = function (delay) {
 			$.fn.show.call(self);
 		}, delay);
 	} else {
-		this.each(function () {
-			if (this.style.display === 'none') {
-				this.style.display = $(this).data('_prevdisplay') || '';
-				$(this).removeData('_prevdisplay');
+		this.each(function (item) {
+			if (item.style.display === 'none') {
+				item.style.display = $(item).data('_prevdisplay') || '';
+				$(item).removeData('_prevdisplay');
 			}
 		});
 	}
@@ -472,10 +473,10 @@ $.fn.hide = function (delay) {
 			$.fn.hide.call(self);
 		}, delay);
 	} else {
-		this.each(function () {
-			if (this.style.display !== 'none') {
-				if (this.style.display) $(this).data('_prevdisplay', this.style.display);
-				this.style.display = 'none';
+		this.each(function (item) {
+			if (item.style.display !== 'none') {
+				if (item.style.display) $(item).data('_prevdisplay', item.style.display);
+				item.style.display = 'none';
 			}
 		});
 	}
@@ -744,18 +745,16 @@ $.fn.after = function (content) {
 
 /**
  * Create hover and active states
- * @param {object} classes - hoverClass => value, activeClass => value, optional
+ * @param {object} classes - { hoverClass: 'value', activeClass: 'value' }, optional
  * @returns {object} current instance of Grindstone
  */
 
 $.fn.mouseable = function (classes) {
-	var hoverClass = classes.hoverClass,
-	    activeClass = classes.activeClass;
-
 
 	if (classes && (typeof classes === 'undefined' ? 'undefined' : _typeof(classes)) !== 'object') throw new Error('Classes parameter for mouseable() must be an object with properties "hoverClass" and/or "activeClass".');
-	hoverClass = classes && hoverClass !== undefined ? classes['hoverClass'] : 'over';
-	activeClass = classes && activeClass !== undefined ? classes['activeClass'] : 'down';
+
+	var hoverClass = classes && classes.hasOwnProperty('hoverClass') ? classes['hoverClass'] : 'over';
+	var activeClass = classes && classes.hasOwnProperty('activeClass') ? classes['activeClass'] : 'down';
 
 	var events = {
 		hover: priv.createInteraction('touchstart', 'mouseenter'),
@@ -765,15 +764,16 @@ $.fn.mouseable = function (classes) {
 	};
 
 	this.each(function () {
+		var _this = this;
 
 		$(this).on(events.hover, function () {
-			$(this).addClass(hoverClass);
+			$(_this).addClass(hoverClass);
 		}).on(events.remove, function () {
-			$(this).removeClass(hoverClass);
+			$(_this).removeClass(hoverClass);
 		}).on(events.down, function () {
-			$(this).addClass(activeClass);
+			$(_this).addClass(activeClass);
 		}).on(events.up, function () {
-			$(this).removeClass(activeClass);
+			$(_this).removeClass(activeClass);
 		});
 	});
 

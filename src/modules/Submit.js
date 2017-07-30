@@ -4,13 +4,13 @@
  * @returns {object} current instance of Grindstone
  */
 	
-	$.fn.submit = callback => {
+	$.fn.submit = function(callback) {
 		if (typeof callback === 'function') {
-			this.each(() => {
+			this.each(function() {
 				$(this).on('submit', callback);
 			});
 		} else {
-			this.each(() => {
+			this.each(function() {
 				this.submit();
 			});
 		}

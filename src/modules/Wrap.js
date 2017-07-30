@@ -4,8 +4,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.wrap = structure => {
-		this.each(() => {
+	$.fn.wrap = function(structure) {
+		this.each(function() {
 			if (typeof structure === 'string') {
 				const contents = this.outerHTML;
 				this.outerHTML = structure + contents;
@@ -22,8 +22,8 @@
  * @returns {object} current instance of Grindstone
  */
 	
-	$.fn.wrapInner = structure => {
-		this.each(() => {
+	$.fn.wrapInner = function(structure) {
+		this.each(function() {
 			if (typeof structure === 'string') {
 				const contents = $(this).html();
 				$(this).html(structure + contents);

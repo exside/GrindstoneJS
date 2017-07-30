@@ -5,7 +5,7 @@
  * @returns {object} Grindstone
  */
 	
-	const Grindstone = (selector, context) => {
+	const Grindstone = function(selector, context) {
 		const set = this;
 		if (selector) {
 			let ctx, elems;
@@ -41,7 +41,7 @@
 
 	Grindstone.prototype = [];
 	
-	const $ = (selector, context) => {
+	const $ = function(selector, context) {
 		return new Grindstone(selector, context);
 	};
 	
@@ -49,7 +49,7 @@
 
 	// private functions
 	const priv = {
-		children: (set, nodeType, selector) => {
+		children: function(set, nodeType, selector) {
 			const newSet = $();
 			for (let i = 0; i < set.length; i++) {
 				for (let child = set[i].firstChild; child; child = child.nextSibling) {
@@ -60,11 +60,11 @@
 			}
 			return newSet;
 		},
-		createInteraction: (touchEvt, mouseEvt) => {
+		createInteraction: function(touchEvt, mouseEvt) {
 			return 'ontouchend' in d ? touchEvt : mouseEvt;
 		},
-		elementProp: (set, propName, selector) => {
-			return $.fn.map.call(set, () => {
+		elementProp: function(set, propName, selector) {
+			return $.fn.map.call(set, function() {
 				let find = this;
 				while (true) {
 					const element = find[propName];
@@ -82,7 +82,7 @@
 				}
 			});
 		},
-		isElementArray: obj => {
+		isElementArray: function(obj) {
 			return obj instanceof Array;
 		},
 		matchesFuncName: Element.prototype.matches ? 'matches' :

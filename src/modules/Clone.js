@@ -3,8 +3,8 @@
  * @returns {object} the cloned elements as a new instance of Grindstone
  */
  
-	$.fn.clone = () => {
-		return this.map(() => {
+	$.fn.clone = function() {
+		return this.map(function() {
 			return this.cloneNode(true);
 		});
 	};

@@ -4,8 +4,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.append = element => {
-		this.each(() => {
+	$.fn.append = function(element) {
+		this.each(function() {
 			if (typeof element === 'string') {
 				if (element.match(/(<).+(>)/)) {
 					this.innerHTML += element;

@@ -5,8 +5,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.on = (action, callback) => {
-		this.each(() => {
+	$.fn.on = function(action, callback) {
+		this.each(function() {
 			const self = this;
 			const events = action.split(' ');
 			events.forEach(evt => {
@@ -23,8 +23,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.off = (action, callback) => {
-		this.each(() => {
+	$.fn.off = function(action, callback) {
+		this.each(function() {
 			const self = this;
 			const events = action.split(' ');
 			events.forEach(evt => {
