@@ -31,18 +31,11 @@ gulp.task('clean', () => {
 // concatenate all the things
 gulp.task('concat', ['clean'], () => {
 	return gulp.src(['src/templates/Intro.js', 'src/Core.js', 'src/modules/*.js', 'src/templates/Outro.js'])
-		//.pipe($.babel({ presets: ['es2015'] }))
 		.pipe($.concat(`${pkg.name}-v${pkg.version}.js`))
+		.pipe($.babel())
 		.pipe($.header(banners.max))
 		.pipe(gulp.dest('dist'));
 });
-
-// babel
-// gulp.task('babel', ['concat'], () => {
-// 	return gulp.src(`${pkg.name}-v${pkg.version}.js`)
-// 		.pipe($.babel({ presets: ['es2015'] }))
-// 		.pipe(gulp.dest('dist'));
-// });
 
 // uglify it
 gulp.task('uglify', ['concat'], () => {
