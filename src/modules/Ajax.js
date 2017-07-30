@@ -1,17 +1,17 @@
-/**
- * Submit a GET or POST AJAX request
- * @param {object} - { properties => values }
- * @returns {object} xmlhttp
- * 
- * Acceptable properties of "opts" are:
- * - method (GET or POST)
- * - url (data path)
- * - async (true or false)
- * - success (callback to invoke if successful)
- * - error (callback to invoke if unsuccessful)
- * - header (adds a custom HTTP header to the request)
- * - headerValue (value of the custom HTTP header)
- */
+	/**
+	 * Submit a GET or POST AJAX request
+	 * @param {object} - { properties => values }
+	 * @returns {object} xmlhttp
+	 * 
+	 * Acceptable properties of "opts" are:
+	 * - method (GET or POST)
+	 * - url (data path)
+	 * - async (true or false)
+	 * - success (callback to invoke if successful)
+	 * - error (callback to invoke if unsuccessful)
+	 * - header (adds a custom HTTP header to the request)
+	 * - headerValue (value of the custom HTTP header)
+	 */
 
 	$.ajax = function(opts) {
 

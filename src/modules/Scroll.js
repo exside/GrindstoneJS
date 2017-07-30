@@ -1,8 +1,8 @@
-/**
- * Capture the scroll event and execute a function
- * @param {function} callback
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Capture the scroll event and execute a function
+	 * @param {function} callback
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.scroll = function(callback) {
 		if (typeof callback === 'function') {
@@ -13,12 +13,12 @@
 		return this;
 	};
  
- /**
- * Scroll an element to a specific top position relative to its another parent container
- * Return the current top offset of an element, relative to its parent container
- * @param {number} top - offset in px, optional
- * @returns {object|number} current instance of Grindstone or top offset
- */
+	/**
+	 * Scroll an element to a specific top position relative to its another parent container
+	 * Return the current top offset of an element, relative to its parent container
+	 * @param {number} top - offset in px, optional
+	 * @returns {object|number} current instance of Grindstone or top offset
+	 */
 
 	$.fn.scrollTop = function(top) {
 		let topOffset;
@@ -49,12 +49,12 @@
 		return typeof top === 'number' ? this : topOffset;
 	};
 
-/**
- * Scroll an element to a specific left position relative to its another parent container
- * Return the current left offset of an element, relative to its parent container
- * @param {number} left - offset in px, optional
- * @returns {object|number} current instance of Grindstone or left offset
- */
+	/**
+	 * Scroll an element to a specific left position relative to its another parent container
+	 * Return the current left offset of an element, relative to its parent container
+	 * @param {number} left - offset in px, optional
+	 * @returns {object|number} current instance of Grindstone or left offset
+	 */
 
 	$.fn.scrollLeft = function(left) {
 		let leftOffset;

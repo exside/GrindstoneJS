@@ -1,8 +1,8 @@
-/**
- * Append a new child element to the current object
- * @param {string|object} element
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Append a new child element to the current object
+	 * @param {string|object} element
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.append = function(element) {
 		this.each(function() {

@@ -1,8 +1,8 @@
-/**
- * Trigger a function by double-tapping or double-clicking
- * @param {function} callback
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Trigger a function by double-tapping or double-clicking
+	 * @param {function} callback
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.doubleTap = function(callback) {
 		let active, int;

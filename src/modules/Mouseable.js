@@ -1,8 +1,8 @@
-/**
- * Create hover and active states
- * @param {object} classes - { hoverClass: 'string', activeClass: 'string' }, optional
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Create hover and active states
+	 * @param {object} classes - { hoverClass: 'string', activeClass: 'string' }, optional
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.mouseable = function(classes) {
 

@@ -1,8 +1,8 @@
-/**
- * Submit a form or trigger a function when a form is submitted
- * @param {function} callback - optional
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Submit a form or trigger a function when a form is submitted
+	 * @param {function} callback - optional
+	 * @returns {object} current instance of Grindstone
+	 */
 	
 	$.fn.submit = function(callback) {
 		if (typeof callback === 'function') {

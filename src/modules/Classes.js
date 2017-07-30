@@ -1,8 +1,8 @@
-/**
- * Determine if the elements have the specified class
- * @param {string} cls - className
- * @returns {boolean} true or false
- */
+	/**
+	 * Determine if the elements have the specified class
+	 * @param {string} cls - className
+	 * @returns {boolean} true or false
+	 */
 
 	$.fn.hasClass = function(cls) {
 		let hasCls;
@@ -12,11 +12,11 @@
 		return hasCls;
 	};
 
-/**
- * Add a class to the current set of elements
- * @param {string} cls - className
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Add a class to the current set of elements
+	 * @param {string} cls - className
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.addClass = function(cls) {
 		const classes = cls.split(' ');
@@ -29,11 +29,11 @@
 		return this;
 	};
 
-/**
- * Remove a class from the current set of elements
- * @param {string} cls - className
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Remove a class from the current set of elements
+	 * @param {string} cls - className
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.removeClass = function(cls) {
 		const classes = cls.split(' ');
@@ -46,11 +46,11 @@
 		return this;
 	};
 
-/**
- * Toggle the specified class
- * @param {string} cls - className
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Toggle the specified class
+	 * @param {string} cls - className
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.toggleClass = function(cls) {
 		const classes = cls.split(' ');

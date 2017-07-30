@@ -1,8 +1,8 @@
-/**
- * Return the left or top value of the selector, relative to the document
- * @param {string} position - "left" or "top"
- * @returns {number} offset value in px
- */
+	/**
+	 * Return the left or top value of the selector, relative to the document
+	 * @param {string} position - "left" or "top"
+	 * @returns {number} offset value in px
+	 */
 
 	$.fn.offset = function(position) {
 		if (position && typeof position === 'string') {

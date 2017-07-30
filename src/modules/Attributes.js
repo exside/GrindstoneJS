@@ -1,9 +1,9 @@
-/**
- * Set or return the value of the specified attribute
- * @param {string} attribute
- * @param {string} value - optional
- * @returns {object|string} current instance of Grindstone or attribute value
- */
+	/**
+	 * Set or return the value of the specified attribute
+	 * @param {string} attribute
+	 * @param {string} value - optional
+	 * @returns {object|string} current instance of Grindstone or attribute value
+	 */
 
 	$.fn.attr = function(attribute, value) {
 		let elemAttribute;
@@ -17,11 +17,11 @@
 		return value ? this : elemAttribute;
 	};
 
-/**
- * Determine if the current element has the specified attribute
- * @param {string} attribute
- * @returns {boolean} true or false
- */
+	/**
+	 * Determine if the current element has the specified attribute
+	 * @param {string} attribute
+	 * @returns {boolean} true or false
+	 */
 
 	$.fn.hasAttr = function(attribute) {
 		let exists;
@@ -31,11 +31,11 @@
 		return exists;
 	};
 
-/**
- * Remove the the specified attribute
- * @param {string} attribute
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Remove the the specified attribute
+	 * @param {string} attribute
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.removeAttr = function(attribute) {
 		this.each(function() {

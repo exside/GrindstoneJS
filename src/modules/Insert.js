@@ -1,8 +1,8 @@
-/**
- * Insert new content before a target element
- * @param {string|object} content
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Insert new content before a target element
+	 * @param {string|object} content
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.before = function(content) {
 		this.each(function() {
@@ -24,11 +24,11 @@
 		return this;
 	};
 
-/**
- * Insert new content after a target element
- * @param {string|object} content
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Insert new content after a target element
+	 * @param {string|object} content
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.after = function(content) {
 		this.each(function() {

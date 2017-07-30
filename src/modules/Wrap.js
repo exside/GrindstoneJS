@@ -1,8 +1,8 @@
-/**
- * Wrap the outer structure of the set of elements
- * @param {string} structure - HTML structure, opening tags only
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Wrap the outer structure of the set of elements
+	 * @param {string} structure - HTML structure, opening tags only
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.wrap = function(structure) {
 		this.each(function() {
@@ -16,11 +16,11 @@
 		return this;
 	};
 
-/**
- * Wrap the inner structure of the set of elements
- * @param {string} structure - HTML structure, opening tags only
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Wrap the inner structure of the set of elements
+	 * @param {string} structure - HTML structure, opening tags only
+	 * @returns {object} current instance of Grindstone
+	 */
 	
 	$.fn.wrapInner = function(structure) {
 		this.each(function() {

@@ -1,8 +1,8 @@
-/**
- * Show a set of hidden elements
- * @param {delay} delay - in milliseconds, optional
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Show a set of hidden elements
+	 * @param {delay} delay - in milliseconds, optional
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.show = function(delay) {
 		if (delay) {
@@ -21,11 +21,11 @@
 		return this;
 	};
 
-/**
- * Hide a set of elements
- * @param {delay} delay - in milliseconds, optional
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Hide a set of elements
+	 * @param {delay} delay - in milliseconds, optional
+	 * @returns {object} current instance of Grindstone
+	 */
 
 	$.fn.hide = function(delay) {
 		if (delay) {

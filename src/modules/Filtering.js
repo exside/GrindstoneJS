@@ -1,8 +1,8 @@
-/**
- * Check if any of the elements match the given selector or callback function
- * @param {string|function} filterBy - selector or callback function, return true to include
- * @returns {boolean} true if at least one of the elements matches the given selector
- */
+    /**
+     * Check if any of the elements match the given selector or callback function
+     * @param {string|function} filterBy - selector or callback function, return true to include
+     * @returns {boolean} true if at least one of the elements matches the given selector
+     */
 
 	$.fn.is = function(filterBy) {
         if (typeof filterBy === 'function') {
@@ -17,11 +17,11 @@
 		return false;
 	};
 
-/**
- * Map each element to an array of values
- * @param {function} callback - return the value to be included, or null or undefined to skip
- * @returns {object} Grindstone object of included values returned from the callback
- */
+    /**
+     * Map each element to an array of values
+     * @param {function} callback - return the value to be included, or null or undefined to skip
+     * @returns {object} Grindstone object of included values returned from the callback
+     */
 
 	$.fn.map = function(callback) {
         const newSet = $();
@@ -32,11 +32,11 @@
         return newSet;
 	};
 
-/**
- * Filter the elements by the selector or callback function
- * @param {string|function} filterBy - selector or callback function, return true to include
- * @returns {object} new instance of Grindstone with the reduced set of matching elements
- */
+    /**
+     * Filter the elements by the selector or callback function
+     * @param {string|function} filterBy - selector or callback function, return true to include
+     * @returns {object} new instance of Grindstone with the reduced set of matching elements
+     */
 
 	$.fn.filter = function(filterBy) {
         return $.fn.map.call(this, function() {
@@ -44,11 +44,11 @@
         });
 	};
 
-/**
- * Excludes matching elements and includes non-matching elements
- * @param {string|function} filterBy - selector or callback function, return true to include
- * @returns {boolean} new instance of Grindstone with the reduced set of not matching elements
- */
+    /**
+     * Excludes matching elements and includes non-matching elements
+     * @param {string|function} filterBy - selector or callback function, return true to include
+     * @returns {boolean} new instance of Grindstone with the reduced set of not matching elements
+     */
 
 	$.fn.not = function(filterBy) {
         return $.fn.map.call(this, function() {
@@ -56,19 +56,19 @@
         });
 	};
 
-/**
- * Get the first element
- * @returns {object} new instance of Grindstone with the first element
- */
+    /**
+     * Get the first element
+     * @returns {object} new instance of Grindstone with the first element
+     */
 
     $.fn.first = function() {
         return $(this.set[0]);
     };
 
-/**
- * Get the last element
- * @returns {object} new instance of Grindstone with the last element
- */
+    /**
+     * Get the last element
+     * @returns {object} new instance of Grindstone with the last element
+     */
 
     $.fn.last = function() {
         return $(this.set[this.set.length - 1]);

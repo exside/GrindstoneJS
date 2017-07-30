@@ -258,5 +258,5 @@ Contributor(s): dzervoudakes
 v3.0.0
 
 - rewrote each module in ES6
-- implemented compiling with Babel
+- implemented transpiling with Babel
 - implemented JSDoc

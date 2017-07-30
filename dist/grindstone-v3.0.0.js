@@ -933,11 +933,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	/**
- * Scroll an element to a specific top position relative to its another parent container
- * Return the current top offset of an element, relative to its parent container
- * @param {number} top - offset in px, optional
- * @returns {object|number} current instance of Grindstone or top offset
- */
+  * Scroll an element to a specific top position relative to its another parent container
+  * Return the current top offset of an element, relative to its parent container
+  * @param {number} top - offset in px, optional
+  * @returns {object|number} current instance of Grindstone or top offset
+  */
 
 	$.fn.scrollTop = function (top) {
 		var topOffset = void 0;

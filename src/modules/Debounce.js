@@ -1,10 +1,10 @@
-/**
- * Debounce a given function
- * @param {function} fn - function to debounce
- * @param {number} wait - wait time in milliseconds
- * @param {boolean} immediate - invoke immediately?
- * @returns {function} invoke debounce
- */
+	/**
+	 * Debounce a given function
+	 * @param {function} fn - function to debounce
+	 * @param {number} wait - wait time in milliseconds
+	 * @param {boolean} immediate - invoke immediately?
+	 * @returns {function} invoke debounce
+	 */
 
 	$.debounce = function(fn, wait, immediate) {
 		let timeout;

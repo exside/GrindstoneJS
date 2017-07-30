@@ -1,8 +1,8 @@
-/**
- * Iterate through each item in the set and execute the callback
- * @param {function} callback
- * @returns {object} current instance of Grindstone
- */
+	/**
+	 * Iterate through each item in the set and execute the callback
+	 * @param {function} callback
+	 * @returns {object} current instance of Grindstone
+	 */
 	
 	$.fn.each = function(callback) {
 		let set = this.set;
