@@ -73,4 +73,3 @@
     $.fn.last = () => {
         return $(this.set[this.set.length - 1]);
     };
-

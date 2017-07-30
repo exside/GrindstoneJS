@@ -46,4 +46,3 @@
 	$.fn.contents = () => {
 		return priv.children(this);
 	};
-
