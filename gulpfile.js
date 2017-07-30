@@ -28,7 +28,7 @@ gulp.task('clean', () => {
 		.pipe($.clean({ force: true }));
 });
 
-// concatenate all the things
+// concatenate and transpile all the things
 gulp.task('concat', ['clean'], () => {
 	return gulp.src(['src/templates/Intro.js', 'src/Core.js', 'src/modules/*.js', 'src/templates/Outro.js'])
 		.pipe($.concat(`${pkg.name}-v${pkg.version}.js`))

@@ -9,12 +9,11 @@
 
 'use strict';
 
-var _arguments = arguments;
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-//((w, d) => {
+((w, d) => {
 
+// @TODO: HAVE THIS CLOSURE BUILT DYNAMICALLY W/ BABEL AND REMOVE THE PHYSICAL INTRO/OUTRO FILES
 /**
  * Library core: constructor, prototype
  * @param {string|object} selector
@@ -23,7 +22,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  */
 
 var Grindstone = function Grindstone(selector, context) {
-	var set = undefined;
+	var set = this;
 	if (selector) {
 		var ctx = void 0,
 		    elems = void 0;
@@ -53,8 +52,8 @@ var Grindstone = function Grindstone(selector, context) {
 			set.push(selector);
 		}
 	}
-	undefined.set = set; // backwards compatibility
-	return undefined;
+	this.set = set; // backwards compatibility
+	return this;
 };
 
 Grindstone.prototype = [];
@@ -83,7 +82,7 @@ var priv = {
 	},
 	elementProp: function elementProp(set, propName, selector) {
 		return $.fn.map.call(set, function () {
-			var find = undefined;
+			var find = this;
 			while (true) {
 				var element = find[propName];
 				if (!element) {
@@ -161,12 +160,12 @@ $.ajax = function (opts) {
  */
 
 $.fn.append = function (element) {
-	undefined.each(function () {
+	this.each(function () {
 		if (typeof element === 'string') {
 			if (element.match(/(<).+(>)/)) {
-				undefined.innerHTML += element;
+				this.innerHTML += element;
 			} else {
-				var self = undefined;
+				var self = this;
 				var dom = d.querySelectorAll(element);
 				dom = Array.prototype.slice.call(dom);
 				dom.forEach(function (item) {
@@ -174,10 +173,10 @@ $.fn.append = function (element) {
 				});
 			}
 		} else {
-			undefined.appendChild(element);
+			this.appendChild(element);
 		}
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -189,14 +188,14 @@ $.fn.append = function (element) {
 
 $.fn.attr = function (attribute, value) {
 	var elemAttribute = void 0;
-	undefined.each(function () {
+	this.each(function () {
 		if (value || value === '') {
-			undefined.setAttribute(attribute, value);
+			this.setAttribute(attribute, value);
 		} else {
-			elemAttribute = undefined.getAttribute(attribute);
+			elemAttribute = this.getAttribute(attribute);
 		}
 	});
-	return value ? undefined : elemAttribute;
+	return value ? this : elemAttribute;
 };
 
 /**
@@ -207,8 +206,8 @@ $.fn.attr = function (attribute, value) {
 
 $.fn.hasAttr = function (attribute) {
 	var exists = void 0;
-	undefined.each(function () {
-		if (attribute) exists = $(undefined).attr(attribute) !== null;
+	this.each(function () {
+		if (attribute) exists = $(this).attr(attribute) !== null;
 	});
 	return exists;
 };
@@ -220,10 +219,10 @@ $.fn.hasAttr = function (attribute) {
  */
 
 $.fn.removeAttr = function (attribute) {
-	undefined.each(function () {
-		if (attribute) undefined.removeAttribute(attribute);
+	this.each(function () {
+		if (attribute) this.removeAttribute(attribute);
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -236,21 +235,21 @@ $.fn.removeAttr = function (attribute) {
 $.fn.css = function (styles, value) {
 	var returnedStyle = void 0,
 	    returnStyle = void 0;
-	undefined.each(function () {
+	this.each(function () {
 		if ((typeof styles === 'undefined' ? 'undefined' : _typeof(styles)) === 'object') {
-			var self = undefined;
+			var self = this;
 			var stl = Object.keys(styles);
 			stl.forEach(function (key) {
 				self.style[key] = styles[key];
 			});
 		} else if (typeof styles === 'string' && (value === undefined || value === null)) {
-			returnedStyle = undefined.style[styles];
+			returnedStyle = this.style[styles];
 			returnStyle = true;
 		} else if (typeof styles === 'string') {
-			undefined.style[styles] = value;
+			this.style[styles] = value;
 		}
 	});
-	return returnStyle ? returnedStyle : undefined;
+	return returnStyle ? returnedStyle : this;
 };
 
 /**
@@ -261,8 +260,8 @@ $.fn.css = function (styles, value) {
 
 $.fn.hasClass = function (cls) {
 	var hasCls = void 0;
-	undefined.each(function () {
-		hasCls = undefined.classList.contains(cls);
+	this.each(function () {
+		hasCls = this.classList.contains(cls);
 	});
 	return hasCls;
 };
@@ -275,13 +274,13 @@ $.fn.hasClass = function (cls) {
 
 $.fn.addClass = function (cls) {
 	var classes = cls.split(' ');
-	undefined.each(function () {
-		var self = undefined;
+	this.each(function () {
+		var self = this;
 		classes.forEach(function (clsName) {
 			self.classList.add(clsName);
 		});
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -292,13 +291,13 @@ $.fn.addClass = function (cls) {
 
 $.fn.removeClass = function (cls) {
 	var classes = cls.split(' ');
-	undefined.each(function () {
-		var self = undefined;
+	this.each(function () {
+		var self = this;
 		classes.forEach(function (clsName) {
 			self.classList.remove(clsName);
 		});
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -309,13 +308,13 @@ $.fn.removeClass = function (cls) {
 
 $.fn.toggleClass = function (cls) {
 	var classes = cls.split(' ');
-	undefined.each(function () {
-		var self = undefined;
+	this.each(function () {
+		var self = this;
 		classes.forEach(function (clsName) {
 			self.classList.toggle(clsName);
 		});
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -324,8 +323,8 @@ $.fn.toggleClass = function (cls) {
  */
 
 $.fn.clone = function () {
-	return undefined.map(function () {
-		return undefined.cloneNode(true);
+	return this.map(function () {
+		return this.cloneNode(true);
 	});
 };
 
@@ -338,14 +337,14 @@ $.fn.clone = function () {
 
 $.fn.data = function (valueName, valueContent) {
 	if (valueContent) {
-		undefined.each(function () {
-			$(undefined).attr('data-' + valueName, valueContent);
+		this.each(function () {
+			$(this).attr('data-' + valueName, valueContent);
 		});
-		return undefined;
+		return this;
 	} else {
 		var elemValue = void 0;
-		undefined.each(function () {
-			elemValue = $(undefined).attr('data-' + valueName);
+		this.each(function () {
+			elemValue = $(this).attr('data-' + valueName);
 		});
 		return elemValue;
 	}
@@ -358,10 +357,10 @@ $.fn.data = function (valueName, valueContent) {
  */
 
 $.fn.removeData = function (valueName) {
-	undefined.each(function () {
-		$(undefined).removeAttr('data-' + valueName);
+	this.each(function () {
+		$(this).removeAttr('data-' + valueName);
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -375,8 +374,8 @@ $.fn.removeData = function (valueName) {
 $.debounce = function (fn, wait, immediate) {
 	var timeout = void 0;
 	var debounce = function debounce() {
-		var context = undefined;
-		var args = _arguments;
+		var context = this;
+		var args = arguments;
 		var later = function later() {
 			timeout = null;
 			if (!immediate) fn.apply(context, args);
@@ -397,18 +396,18 @@ $.debounce = function (fn, wait, immediate) {
 
 $.fn.height = function (num) {
 	if (typeof num === 'number' || num === 0) {
-		undefined.each(function () {
-			undefined.style.height = num + 'px';
+		this.each(function () {
+			this.style.height = num + 'px';
 		});
-		return undefined;
+		return this;
 	} else {
-		var self = undefined.set[0];
+		var self = this.set[0];
 		if (self === d) {
 			return d.body.clientHeight;
 		} else if (self === w) {
 			return w.innerHeight;
 		} else {
-			return undefined.set[0].offsetHeight;
+			return this.set[0].offsetHeight;
 		}
 	}
 };
@@ -421,18 +420,18 @@ $.fn.height = function (num) {
 
 $.fn.width = function (num) {
 	if (typeof num === 'number' || num === 0) {
-		undefined.each(function () {
-			undefined.style.width = num + 'px';
+		this.each(function () {
+			this.style.width = num + 'px';
 		});
-		return undefined;
+		return this;
 	} else {
-		var self = undefined.set[0];
+		var self = this.set[0];
 		if (self === d) {
 			return d.body.clientWidth;
 		} else if (self === w) {
 			return w.innerWidth;
 		} else {
-			return undefined.set[0].offsetWidth;
+			return this.set[0].offsetWidth;
 		}
 	}
 };
@@ -445,19 +444,19 @@ $.fn.width = function (num) {
 
 $.fn.show = function (delay) {
 	if (delay) {
-		var self = undefined;
+		var self = this;
 		setTimeout(function () {
 			$.fn.show.call(self);
 		}, delay);
 	} else {
-		undefined.each(function () {
-			if (undefined.style.display === 'none') {
-				undefined.style.display = $(undefined).data('_prevdisplay') || '';
-				$(undefined).removeData('_prevdisplay');
+		this.each(function () {
+			if (this.style.display === 'none') {
+				this.style.display = $(this).data('_prevdisplay') || '';
+				$(this).removeData('_prevdisplay');
 			}
 		});
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -468,19 +467,19 @@ $.fn.show = function (delay) {
 
 $.fn.hide = function (delay) {
 	if (delay) {
-		var self = undefined;
+		var self = this;
 		setTimeout(function () {
 			$.fn.hide.call(self);
 		}, delay);
 	} else {
-		undefined.each(function () {
-			if (undefined.style.display !== 'none') {
-				if (undefined.style.display) $(undefined).data('_prevdisplay', undefined.style.display);
-				undefined.style.display = 'none';
+		this.each(function () {
+			if (this.style.display !== 'none') {
+				if (this.style.display) $(this).data('_prevdisplay', this.style.display);
+				this.style.display = 'none';
 			}
 		});
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -492,10 +491,10 @@ $.fn.hide = function (delay) {
 $.fn.doubleTap = function (callback) {
 	var active = void 0,
 	    int = void 0;
-	undefined.each(function () {
+	this.each(function () {
 		active = false;
 		int = priv.createInteraction('touchend', 'click');
-		$(undefined).on(int, function () {
+		$(this).on(int, function () {
 			if (active) {
 				callback();
 				return active = false;
@@ -506,7 +505,7 @@ $.fn.doubleTap = function (callback) {
 			}, 350);
 		});
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -516,12 +515,12 @@ $.fn.doubleTap = function (callback) {
  */
 
 $.fn.each = function (callback) {
-	var set = undefined.set;
+	var set = this.set;
 	set = Array.prototype.slice.call(set);
 	set.forEach(function (item) {
 		callback.call(item);
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -531,7 +530,7 @@ $.fn.each = function (callback) {
  */
 
 $.fn.eq = function (index) {
-	return $(undefined.set[index]);
+	return $(this.set[index]);
 };
 
 /**
@@ -542,14 +541,14 @@ $.fn.eq = function (index) {
  */
 
 $.fn.on = function (action, callback) {
-	undefined.each(function () {
-		var self = undefined;
+	this.each(function () {
+		var self = this;
 		var events = action.split(' ');
 		events.forEach(function (evt) {
 			self.addEventListener(evt, callback, false);
 		});
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -560,14 +559,14 @@ $.fn.on = function (action, callback) {
  */
 
 $.fn.off = function (action, callback) {
-	undefined.each(function () {
-		var self = undefined;
+	this.each(function () {
+		var self = this;
 		var events = action.split(' ');
 		events.forEach(function (evt) {
 			self.removeEventListener(evt, callback, false);
 		});
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -578,12 +577,12 @@ $.fn.off = function (action, callback) {
 
 $.fn.is = function (filterBy) {
 	if (typeof filterBy === 'function') {
-		for (var i = 0; i < undefined.length; i++) {
-			if (filterBy.call(undefined[i], i, undefined[i])) return true;
+		for (var i = 0; i < this.length; i++) {
+			if (filterBy.call(this[i], i, this[i])) return true;
 		}
 	} else {
-		for (var _i = 0; _i < undefined.length; _i++) {
-			if (undefined[_i][priv.matchesFuncName](filterBy)) return true;
+		for (var _i = 0; _i < this.length; _i++) {
+			if (this[_i][priv.matchesFuncName](filterBy)) return true;
 		}
 	}
 	return false;
@@ -597,8 +596,8 @@ $.fn.is = function (filterBy) {
 
 $.fn.map = function (callback) {
 	var newSet = $();
-	for (var i = 0; i < undefined.length; i++) {
-		var ret = callback.call(undefined[i]);
+	for (var i = 0; i < this.length; i++) {
+		var ret = callback.call(this[i]);
 		if (ret !== undefined && ret !== null) newSet.push(ret);
 	}
 	return newSet;
@@ -611,8 +610,8 @@ $.fn.map = function (callback) {
  */
 
 $.fn.filter = function (filterBy) {
-	return $.fn.map.call(undefined, function () {
-		if ($(undefined).is(filterBy)) return undefined;
+	return $.fn.map.call(this, function () {
+		if ($(this).is(filterBy)) return this;
 	});
 };
 
@@ -623,8 +622,8 @@ $.fn.filter = function (filterBy) {
  */
 
 $.fn.not = function (filterBy) {
-	return $.fn.map.call(undefined, function () {
-		if (!$(undefined).is(filterBy)) return undefined;
+	return $.fn.map.call(this, function () {
+		if (!$(this).is(filterBy)) return this;
 	});
 };
 
@@ -634,7 +633,7 @@ $.fn.not = function (filterBy) {
  */
 
 $.fn.first = function () {
-	return $(undefined.set[0]);
+	return $(this.set[0]);
 };
 
 /**
@@ -643,7 +642,7 @@ $.fn.first = function () {
  */
 
 $.fn.last = function () {
-	return $(undefined.set[undefined.set.length - 1]);
+	return $(this.set[this.set.length - 1]);
 };
 
 /**
@@ -654,13 +653,13 @@ $.fn.last = function () {
 
 $.fn.focus = function (callback) {
 	if (typeof callback === 'function') {
-		undefined.each(function () {
-			$(undefined).on('focus', callback);
+		this.each(function () {
+			$(this).on('focus', callback);
 		});
 	} else {
-		undefined.set[0].focus();
+		this.set[0].focus();
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -670,7 +669,7 @@ $.fn.focus = function (callback) {
  */
 
 $.fn.get = function (index) {
-	return undefined.set[index];
+	return this.set[index];
 };
 
 /**
@@ -681,14 +680,14 @@ $.fn.get = function (index) {
 
 $.fn.html = function (content) {
 	var text = void 0;
-	undefined.each(function () {
+	this.each(function () {
 		if (content || content === '') {
-			undefined.innerHTML = content;
+			this.innerHTML = content;
 		} else {
-			text = undefined.innerHTML;
+			text = this.innerHTML;
 		}
 	});
-	return content ? undefined : text;
+	return content ? this : text;
 };
 
 /**
@@ -698,12 +697,12 @@ $.fn.html = function (content) {
  */
 
 $.fn.before = function (content) {
-	undefined.each(function () {
+	this.each(function () {
 		if (typeof content === 'string') {
 			if (content.match(/(<).+(>)/)) {
-				undefined.insertAdjacentHTML('beforebegin', content);
+				this.insertAdjacentHTML('beforebegin', content);
 			} else {
-				var self = undefined;
+				var self = this;
 				var dom = d.querySelectorAll(content);
 				dom = Array.prototype.slice.call(dom);
 				dom.forEach(function (item) {
@@ -711,10 +710,10 @@ $.fn.before = function (content) {
 				});
 			}
 		} else {
-			undefined.parentNode.insertBefore(content, undefined);
+			this.parentNode.insertBefore(content, this);
 		}
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -724,12 +723,12 @@ $.fn.before = function (content) {
  */
 
 $.fn.after = function (content) {
-	undefined.each(function () {
+	this.each(function () {
 		if (typeof content === 'string') {
 			if (content.match(/(<).+(>)/)) {
-				undefined.insertAdjacentHTML('afterend', content);
+				this.insertAdjacentHTML('afterend', content);
 			} else {
-				var self = undefined;
+				var self = this;
 				var dom = d.querySelectorAll(content);
 				dom = Array.prototype.slice.call(dom);
 				dom.forEach(function (item) {
@@ -737,10 +736,10 @@ $.fn.after = function (content) {
 				});
 			}
 		} else {
-			undefined.parentNode.insertBefore(content, undefined.nextSibling);
+			this.parentNode.insertBefore(content, this.nextSibling);
 		}
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -765,20 +764,20 @@ $.fn.mouseable = function (classes) {
 		up: priv.createInteraction('touchend', 'mouseup mouseleave')
 	};
 
-	undefined.each(function () {
+	this.each(function () {
 
-		$(undefined).on(events.hover, function () {
-			$(undefined).addClass(hoverClass);
+		$(this).on(events.hover, function () {
+			$(this).addClass(hoverClass);
 		}).on(events.remove, function () {
-			$(undefined).removeClass(hoverClass);
+			$(this).removeClass(hoverClass);
 		}).on(events.down, function () {
-			$(undefined).addClass(activeClass);
+			$(this).addClass(activeClass);
 		}).on(events.up, function () {
-			$(undefined).removeClass(activeClass);
+			$(this).removeClass(activeClass);
 		});
 	});
 
-	return undefined;
+	return this;
 };
 
 /**
@@ -792,7 +791,7 @@ $.fn.offset = function (position) {
 		if (position !== 'left' && position !== 'top') {
 			throw new Error('offset() position must be either "left" or "top".');
 		} else {
-			var el = undefined.set[0];
+			var el = this.set[0];
 			if (position === 'left') {
 				var offsetLeft = 0;
 				do {
@@ -819,12 +818,12 @@ $.fn.offset = function (position) {
  */
 
 $.fn.prepend = function (element) {
-	undefined.each(function () {
+	this.each(function () {
 		if (typeof element === 'string') {
 			if (element.match(/(<).+(>)/)) {
-				undefined.insertAdjacentHTML('afterbegin', element);
+				this.insertAdjacentHTML('afterbegin', element);
 			} else {
-				var self = undefined;
+				var self = this;
 				var dom = d.querySelectorAll(element);
 				dom = Array.prototype.slice.call(dom);
 				dom.forEach(function (item) {
@@ -832,10 +831,10 @@ $.fn.prepend = function (element) {
 				});
 			}
 		} else {
-			undefined.insertBefore(element, undefined.firstChild);
+			this.insertBefore(element, this.firstChild);
 		}
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -846,11 +845,11 @@ $.fn.prepend = function (element) {
 
 $.fn.ready = function (callback) {
 	if (typeof callback === 'function') {
-		undefined.each(function () {
-			$(undefined).on('DOMContentLoaded', callback);
+		this.each(function () {
+			$(this).on('DOMContentLoaded', callback);
 		});
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -861,11 +860,11 @@ $.fn.ready = function (callback) {
 
 $.fn.load = function (callback) {
 	if (typeof callback === 'function') {
-		undefined.each(function () {
-			$(undefined).on('load', callback);
+		this.each(function () {
+			$(this).on('load', callback);
 		});
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -878,18 +877,18 @@ $.fn.remove = function (target) {
 	if (target) {
 		var elems = d.querySelectorAll(target);
 		elems = Array.prototype.slice.call(elems);
-		undefined.each(function () {
-			var self = undefined;
+		this.each(function () {
+			var self = this;
 			elems.forEach(function (el) {
 				self.removeChild(el);
 			});
 		});
 	} else {
-		undefined.each(function () {
-			undefined.parentNode.removeChild(undefined);
+		this.each(function () {
+			this.parentNode.removeChild(this);
 		});
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -899,10 +898,10 @@ $.fn.remove = function (target) {
  */
 
 $.fn.replaceWith = function (content) {
-	undefined.each(function () {
-		undefined.outerHTML = content ? content : '';
+	this.each(function () {
+		this.outerHTML = content ? content : '';
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -913,11 +912,11 @@ $.fn.replaceWith = function (content) {
 
 $.fn.resize = function (callback) {
 	if (typeof callback === 'function') {
-		undefined.each(function () {
-			$(undefined).on('resize', callback);
+		this.each(function () {
+			$(this).on('resize', callback);
 		});
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -928,11 +927,11 @@ $.fn.resize = function (callback) {
 
 $.fn.scroll = function (callback) {
 	if (typeof callback === 'function') {
-		undefined.each(function () {
-			$(undefined).on('scroll', callback);
+		this.each(function () {
+			$(this).on('scroll', callback);
 		});
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -944,31 +943,31 @@ $.fn.scroll = function (callback) {
 
 $.fn.scrollTop = function (top) {
 	var topOffset = void 0;
-	undefined.each(function () {
-		switch (undefined) {
+	this.each(function () {
+		switch (this) {
 			case w:
 				if (typeof top === 'number') {
-					undefined.scrollTo(0, top);
+					this.scrollTo(0, top);
 				} else {
-					topOffset = undefined.pageYOffset;
+					topOffset = this.pageYOffset;
 				}
 				break;
 			case d:
 				if (typeof top === 'number') {
-					undefined.body.scrollTop = top;
+					this.body.scrollTop = top;
 				} else {
-					topOffset = undefined.body.scrollTop;
+					topOffset = this.body.scrollTop;
 				}
 				break;
 			default:
 				if (typeof top === 'number') {
-					undefined.scrollTop = top;
+					this.scrollTop = top;
 				} else {
-					topOffset = undefined.scrollTop;
+					topOffset = this.scrollTop;
 				}
 		}
 	});
-	return typeof top === 'number' ? undefined : topOffset;
+	return typeof top === 'number' ? this : topOffset;
 };
 
 /**
@@ -980,31 +979,31 @@ $.fn.scrollTop = function (top) {
 
 $.fn.scrollLeft = function (left) {
 	var leftOffset = void 0;
-	undefined.each(function () {
-		switch (undefined) {
+	this.each(function () {
+		switch (this) {
 			case w:
 				if (typeof left === 'number') {
-					undefined.scrollTo(left, 0);
+					this.scrollTo(left, 0);
 				} else {
-					leftOffset = undefined.pageXOffset;
+					leftOffset = this.pageXOffset;
 				}
 				break;
 			case d:
 				if (typeof left === 'number') {
-					undefined.body.scrollLeft = left;
+					this.body.scrollLeft = left;
 				} else {
-					leftOffset = undefined.body.scrollLeft;
+					leftOffset = this.body.scrollLeft;
 				}
 				break;
 			default:
 				if (typeof left === 'number') {
-					undefined.scrollTop = left;
+					this.scrollTop = left;
 				} else {
-					leftOffset = undefined.scrollLeft;
+					leftOffset = this.scrollLeft;
 				}
 		}
 	});
-	return typeof left === 'number' ? undefined : leftOffset;
+	return typeof left === 'number' ? this : leftOffset;
 };
 
 /**
@@ -1015,15 +1014,15 @@ $.fn.scrollLeft = function (left) {
 
 $.fn.submit = function (callback) {
 	if (typeof callback === 'function') {
-		undefined.each(function () {
-			$(undefined).on('submit', callback);
+		this.each(function () {
+			$(this).on('submit', callback);
 		});
 	} else {
-		undefined.each(function () {
-			undefined.submit();
+		this.each(function () {
+			this.submit();
 		});
 	}
-	return undefined;
+	return this;
 };
 
 /**
@@ -1033,7 +1032,7 @@ $.fn.submit = function (callback) {
  */
 
 $.fn.parent = function (selector) {
-	return priv.elementProp(undefined, 'parentNode', selector);
+	return priv.elementProp(this, 'parentNode', selector);
 };
 
 /**
@@ -1043,7 +1042,7 @@ $.fn.parent = function (selector) {
  */
 
 $.fn.next = function (selector) {
-	return priv.elementProp(undefined, 'nextSibling', selector);
+	return priv.elementProp(this, 'nextSibling', selector);
 };
 
 /**
@@ -1053,7 +1052,7 @@ $.fn.next = function (selector) {
  */
 
 $.fn.prev = function (selector) {
-	return priv.elementProp(undefined, 'previousSibling', selector);
+	return priv.elementProp(this, 'previousSibling', selector);
 };
 
 /**
@@ -1063,7 +1062,7 @@ $.fn.prev = function (selector) {
  */
 
 $.fn.children = function (selector) {
-	return priv.children(undefined, 1, selector);
+	return priv.children(this, 1, selector);
 };
 
 /**
@@ -1072,7 +1071,7 @@ $.fn.children = function (selector) {
  */
 
 $.fn.contents = function () {
-	return priv.children(undefined);
+	return priv.children(this);
 };
 
 /**
@@ -1083,10 +1082,10 @@ $.fn.contents = function () {
 
 $.fn.trigger = function (evt) {
 	var customEvent = new Event(evt);
-	undefined.each(function () {
-		undefined.dispatchEvent(customEvent);
+	this.each(function () {
+		this.dispatchEvent(customEvent);
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -1097,12 +1096,12 @@ $.fn.trigger = function (evt) {
 
 $.fn.val = function (newValue) {
 	if (newValue && typeof newValue === 'string') {
-		undefined.each(function () {
-			undefined.value = newValue;
+		this.each(function () {
+			this.value = newValue;
 		});
-		return undefined;
+		return this;
 	} else {
-		return undefined.set[0].value;
+		return this.set[0].value;
 	}
 };
 
@@ -1113,15 +1112,15 @@ $.fn.val = function (newValue) {
  */
 
 $.fn.wrap = function (structure) {
-	undefined.each(function () {
+	this.each(function () {
 		if (typeof structure === 'string') {
-			var contents = undefined.outerHTML;
-			undefined.outerHTML = structure + contents;
+			var contents = this.outerHTML;
+			this.outerHTML = structure + contents;
 		} else {
 			throw new Error('wrap() structure must be a string.');
 		}
 	});
-	return undefined;
+	return this;
 };
 
 /**
@@ -1131,17 +1130,17 @@ $.fn.wrap = function (structure) {
  */
 
 $.fn.wrapInner = function (structure) {
-	undefined.each(function () {
+	this.each(function () {
 		if (typeof structure === 'string') {
-			var contents = $(undefined).html();
-			$(undefined).html(structure + contents);
+			var contents = $(this).html();
+			$(this).html(structure + contents);
 		} else {
 			throw new Error('wrapInner() structure must be a string.');
 		}
 	});
-	return undefined;
+	return this;
 };
 
-//return w.Grindstone = w.$ = $;
+return w.Grindstone = w.$ = $;
 
-//})(window, document);
+})(window, document);
