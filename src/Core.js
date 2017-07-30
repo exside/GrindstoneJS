@@ -5,22 +5,22 @@
  * @returns {object} Grindstone
  */
 	
-	var Grindstone = function(selector, context) {
-		var set = this;
+	const Grindstone = (selector, context) => {
+		const set = this;
 		if (selector) {
-			var ctx, elems;
+			let ctx, elems;
 			if (typeof selector === 'string') {
 				if (context) {
 					if (typeof context === 'string') {
 						ctx = d.querySelectorAll(context);
-					} else if(priv.isElementArray(context)) {
+					} else if (priv.isElementArray(context)) {
 						ctx = context;
 					} else {
 						ctx = [context];
 					}
-					Array.prototype.forEach.call(ctx, function(item) {
+					Array.prototype.forEach.call(ctx, item => {
 						elems = item.querySelectorAll(selector);
-						Array.prototype.forEach.call(elems, function(el) {
+						Array.prototype.forEach.call(elems, el => {
 							if (set.indexOf(el) === -1) {
 								set.push(el);
 							}
@@ -41,31 +41,54 @@
 
 	Grindstone.prototype = [];
 	
-	var $ = function(selector, context) {
+	const $ = (selector, context) => {
 		return new Grindstone(selector, context);
 	};
 	
 	$.fn = Grindstone.prototype;
 
 	// private functions
-	var priv = {};
-	
-	priv.prop = function(obj, property) {
-		return obj.hasOwnProperty(property);
+	const priv = {
+		children: (set, nodeType, selector) => {
+			const newSet = $();
+			for (let i = 0; i < set.length; i++) {
+				for (let child = set[i].firstChild; child; child = child.nextSibling) {
+					if (nodeType === undefined || nodeType === child.nodeType) {
+						if (!selector || $(child).is(selector)) newSet.push(child);
+					}
+				}
+			}
+			return newSet;
+		},
+		createInteraction: (touchEvt, mouseEvt) => {
+			return 'ontouchend' in d ? touchEvt : mouseEvt;
+		},
+		elementProp: (set, propName, selector) => {
+			return $.fn.map.call(set, () => {
+				let find = this;
+				while (true) {
+					const element = find[propName];
+					if (!element) {
+						break;
+					}
+					if (element.nodeType != 1) {
+						find = element;
+						continue;
+					}
+					if (!selector || $(element).is(selector)) {
+						return element;
+					}
+					break;
+				}
+			});
+		},
+		isElementArray: obj => {
+			return obj instanceof Array;
+		},
+		matchesFuncName: Element.prototype.matches ? 'matches' :
+			Element.prototype.matchesSelector ? 'matchesSelector' :
+			Element.prototype.webkitMatchesSelector ? 'webkitMatchesSelector' :
+			Element.prototype.mozMatchesSelector ? 'mozMatchesSelector' :
+			Element.prototype.msMatchesSelector ? 'msMatchesSelector' : 
+			undefined
 	};
-	
-	priv.createInteraction = function(touchEvt, mouseEvt) {
-		return 'ontouchend' in d ? touchEvt : mouseEvt;
-	};
-
-	// this also returns true for Grindstone objects
-	priv.isElementArray = function(obj) {
-		return obj instanceof Array
-	};
-
-	priv.matchesFuncName = Element.prototype.matches ? 'matches' :
-		Element.prototype.matchesSelector ? 'matchesSelector' :
-		Element.prototype.webkitMatchesSelector ? 'webkitMatchesSelector' :
-		Element.prototype.mozMatchesSelector ? 'mozMatchesSelector' :
-		Element.prototype.msMatchesSelector ? 'msMatchesSelector' :
-		undefined;

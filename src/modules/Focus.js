@@ -4,9 +4,9 @@
  * @returns {object} current instance of Grindstone
  */
 	
-	$.fn.focus = function(callback) {
+	$.fn.focus = callback => {
 		if (typeof callback === 'function') {
-			this.each(function() {
+			this.each(() => {
 				$(this).on('focus', callback);
 			});
 		} else {

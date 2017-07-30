@@ -4,9 +4,9 @@
  * @returns {object|string} current instance of Grindstone or current value of an element's inner HTML
  */
 
-	$.fn.html = function(content) {
-		var text;
-		this.each(function() {
+	$.fn.html = content => {
+		let text;
+		this.each(() => {
 			if (content || content === '') {
 				this.innerHTML = content;
 			} else {

@@ -4,16 +4,16 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.prepend = function(element) {
-		this.each(function() {
+	$.fn.prepend = element => {
+		this.each(() => {
 			if (typeof element === 'string') {
 				if (element.match(/(<).+(>)/)) {
 					this.insertAdjacentHTML('afterbegin', element);
 				} else {
-					var self = this;
-					var dom = d.querySelectorAll(element);
+					const self = this;
+					let dom = d.querySelectorAll(element);
 					dom = Array.prototype.slice.call(dom);
-					dom.forEach(function(item) {
+					dom.forEach(item => {
 						self.insertBefore(item, self.firstChild);
 					});
 				}

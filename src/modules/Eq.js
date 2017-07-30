@@ -4,6 +4,6 @@
  * @returns {object} new instance of Grindstone specific to one element
  */
 
-	$.fn.eq = function(index) {
+	$.fn.eq = index => {
 		return $(this.set[index]);
 	};

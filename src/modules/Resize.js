@@ -4,9 +4,9 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.resize = function(callback) {
+	$.fn.resize = callback => {
 		if (typeof callback === 'function') {
-			this.each(function() {
+			this.each(() => {
 				$(this).on('resize', callback);
 			});
 		}

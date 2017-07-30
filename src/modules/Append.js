@@ -4,16 +4,16 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.append = function(element) {
-		this.each(function() {
+	$.fn.append = element => {
+		this.each(() => {
 			if (typeof element === 'string') {
 				if (element.match(/(<).+(>)/)) {
 					this.innerHTML += element;
 				} else {
-					var self = this;
-					var dom = d.querySelectorAll(element);
+					const self = this;
+					let dom = d.querySelectorAll(element);
 					dom = Array.prototype.slice.call(dom);
-					dom.forEach(function(item) {
+					dom.forEach(item => {
 						self.appendChild(item);
 					});
 				}	

@@ -4,9 +4,9 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.scroll = function(callback) {
+	$.fn.scroll = callback => {
 		if (typeof callback === 'function') {
-			this.each(function() {
+			this.each(() => {
 				$(this).on('scroll', callback);
 			});
 		}
@@ -20,30 +20,30 @@
  * @returns {object|number} current instance of Grindstone or top offset
  */
 
-	$.fn.scrollTop = function(top) {
-		var topOffset;
-		this.each(function() {
+	$.fn.scrollTop = top => {
+		let topOffset;
+		this.each(() => {
 			switch (this) {
-				case w:
-					if (typeof top === 'number') {
-						this.scrollTo(0, top);
-					} else {
-						topOffset = this.pageYOffset;
-					}
-					break;
-				case d:
-					if (typeof top === 'number') {
-						this.body.scrollTop = top;
-					} else {
-						topOffset = this.body.scrollTop;
-					}
-					break;
-				default:
-					if (typeof top === 'number') {
-						this.scrollTop = top;
-					} else {
-						topOffset = this.scrollTop;
-					}
+			case w:
+				if (typeof top === 'number') {
+					this.scrollTo(0, top);
+				} else {
+					topOffset = this.pageYOffset;
+				}
+				break;
+			case d:
+				if (typeof top === 'number') {
+					this.body.scrollTop = top;
+				} else {
+					topOffset = this.body.scrollTop;
+				}
+				break;
+			default:
+				if (typeof top === 'number') {
+					this.scrollTop = top;
+				} else {
+					topOffset = this.scrollTop;
+				}
 			}
 		});
 		return typeof top === 'number' ? this : topOffset;
@@ -56,30 +56,30 @@
  * @returns {object|number} current instance of Grindstone or left offset
  */
 
-	$.fn.scrollLeft = function(left) {
-		var leftOffset;
-		this.each(function() {
+	$.fn.scrollLeft = left => {
+		let leftOffset;
+		this.each(() => {
 			switch (this) {
-				case w:
-					if (typeof left === 'number') {
-						this.scrollTo(left, 0);
-					} else {
-						leftOffset = this.pageXOffset;
-					}
-					break;
-				case d:
-					if (typeof left === 'number') {
-						this.body.scrollLeft = left;
-					} else {
-						leftOffset = this.body.scrollLeft;
-					}
-					break;
-				default:
-					if (typeof left === 'number') {
-						this.scrollTop = left;
-					} else {
-						leftOffset = this.scrollLeft;
-					}
+			case w:
+				if (typeof left === 'number') {
+					this.scrollTo(left, 0);
+				} else {
+					leftOffset = this.pageXOffset;
+				}
+				break;
+			case d:
+				if (typeof left === 'number') {
+					this.body.scrollLeft = left;
+				} else {
+					leftOffset = this.body.scrollLeft;
+				}
+				break;
+			default:
+				if (typeof left === 'number') {
+					this.scrollTop = left;
+				} else {
+					leftOffset = this.scrollLeft;
+				}
 			}
 		});
 		return (typeof left === 'number') ? this : leftOffset;

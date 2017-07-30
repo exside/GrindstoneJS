@@ -13,39 +13,29 @@
  * - headerValue (value of the custom HTTP header)
  */
 
-	$.ajax = function(opts) {
+	$.ajax = opts => {
 		
-		var method, url, async, success, error, header, headerValue, xmlhttp;
+		let { method, url, async, success, error, header, headerValue } = opts;
+
+		if (typeof opts !== 'object') throw new Error('XHR properties are not properly defined.');
+
+		method   	= method !== undefined   	? method   	  : null;
+		url      	= url !== undefined      	? url      	  : null;
+		async    	= async !== undefined    	? async    	  : true;
+		success  	= success !== undefined  	? success  	  : () => {};
+		error    	= error !== undefined	 	? error	 	  : () => {};
+		header 	 	= header !== undefined 	 	? header 	  : 'Content-Type';
+		headerValue = headerValue !== undefined ? headerValue : 'application/x-www-form-urlencoded; charset=UTF-8';
 		
-		if (typeof opts === 'object') {
-			method   = priv.prop(opts, 'method')   ? opts.method   : null;
-			url      = priv.prop(opts, 'url')      ? opts.url      : null;
-			async    = priv.prop(opts, 'async')    ? opts.async    : true;
-			success  = priv.prop(opts, 'success')  ? opts.success  : null;
-			error    = priv.prop(opts, 'error')	   ? opts.error	   : function(){};
-		} else {
-			throw new Error('XHR properties are not properly defined.');
-		}
-		
-		xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState === 4) {
-				if (xmlhttp.status === 200) {
-					success(xmlhttp);
-				} else {
-					error(xmlhttp);
-				}
-			}
+		const xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = () => {
+			let func;
+			if (xmlhttp.readyState === 4) func = (xmlhttp.status === 200) ? success(xmlhttp) : error(xmlhttp);
+			return func;
 		};
 		xmlhttp.open(method, url, async);
-		
-		if (priv.prop(opts, 'header') && priv.prop(opts, 'headerValue')) {
-			xmlhttp.setRequestHeader(header, headerValue);
-		} else {
-			xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-		}
-		
+		xmlhttp.setRequestHeader(header, headerValue);
 		xmlhttp.send(null);
-		
+
 		return xmlhttp;
 	};

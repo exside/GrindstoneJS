@@ -5,11 +5,11 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.on = function(action, callback) {
-		this.each(function() {
-			var self = this;
-			var events = action.split(' ');
-			events.forEach(function(evt) {
+	$.fn.on = (action, callback) => {
+		this.each(() => {
+			const self = this;
+			const events = action.split(' ');
+			events.forEach(evt => {
 				self.addEventListener(evt, callback, false);
 			});
 		});
@@ -23,11 +23,11 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.off = function(action, callback) {
-		this.each(function() {
-			var self = this;
-			var events = action.split(' ');
-			events.forEach(function(evt) {
+	$.fn.off = (action, callback) => {
+		this.each(() => {
+			const self = this;
+			const events = action.split(' ');
+			events.forEach(evt => {
 				self.removeEventListener(evt, callback, false);
 			});
 		});

@@ -4,9 +4,9 @@
  * @returns {object|string} current instance of Grindstone or the value of the first element in the set
  */
 
-	$.fn.val = function(newValue) {
-		if (typeof newValue === 'string') {
-			this.each(function() {
+	$.fn.val = newValue => {
+		if (newValue && typeof newValue === 'string') {
+			this.each(() => {
 				this.value = newValue;
 			});
 			return this;

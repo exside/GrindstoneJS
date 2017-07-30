@@ -4,16 +4,16 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.before = function(content) {
-		this.each(function() {
+	$.fn.before = content => {
+		this.each(() => {
 			if (typeof content === 'string') {
 				if (content.match(/(<).+(>)/)) {
 					this.insertAdjacentHTML('beforebegin', content);
 				} else {
-					var self = this;
-					var dom = d.querySelectorAll(content);
+					const self = this;
+					let dom = d.querySelectorAll(content);
 					dom = Array.prototype.slice.call(dom);
-					dom.forEach(function(item) {
+					dom.forEach(item => {
 						self.parentNode.insertBefore(item, self);
 					});
 				}
@@ -30,16 +30,16 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.after = function(content) {
-		this.each(function() {
+	$.fn.after = content => {
+		this.each(() => {
 			if (typeof content === 'string') {
 				if (content.match(/(<).+(>)/)) {
 					this.insertAdjacentHTML('afterend', content);
 				} else {
-					var self = this;
-					var dom = d.querySelectorAll(content);
+					const self = this;
+					let dom = d.querySelectorAll(content);
 					dom = Array.prototype.slice.call(dom);
-					dom.forEach(function(item) {
+					dom.forEach(item => {
 						self.parentNode.insertBefore(item, self.nextSibling);
 					});
 				}

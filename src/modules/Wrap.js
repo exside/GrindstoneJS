@@ -4,12 +4,11 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.wrap = function(structure) {
-		this.each(function() {
+	$.fn.wrap = structure => {
+		this.each(() => {
 			if (typeof structure === 'string') {
-				var contents = this.outerHTML;
-				var wrap = structure;
-				this.outerHTML = wrap + contents;
+				const contents = this.outerHTML;
+				this.outerHTML = structure + contents;
 			} else {
 				throw new Error('wrap() structure must be a string.');
 			}
@@ -23,12 +22,11 @@
  * @returns {object} current instance of Grindstone
  */
 	
-	$.fn.wrapInner = function(structure) {
-		this.each(function() {
+	$.fn.wrapInner = structure => {
+		this.each(() => {
 			if (typeof structure === 'string') {
-				var contents = $(this).html();
-				var wrap = structure;
-				$(this).html(wrap + contents);
+				const contents = $(this).html();
+				$(this).html(structure + contents);
 			} else {
 				throw new Error('wrapInner() structure must be a string.');
 			}

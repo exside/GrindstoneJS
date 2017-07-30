@@ -4,6 +4,6 @@
  * @returns {object} the DOM element
  */
 
-	$.fn.get = function(index) {
+	$.fn.get = index => {
 		return this.set[index];
 	};

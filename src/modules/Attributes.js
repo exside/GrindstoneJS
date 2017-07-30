@@ -5,9 +5,9 @@
  * @returns {object|string} current instance of Grindstone or attribute value
  */
 
-	$.fn.attr = function(attribute, value) {
-		var elemAttribute;
-		this.each(function() {
+	$.fn.attr = (attribute, value) => {
+		let elemAttribute;
+		this.each(() => {
 			if (value || value === '') {
 				this.setAttribute(attribute, value);
 			} else {
@@ -23,9 +23,9 @@
  * @returns {boolean} true or false
  */
 
-	$.fn.hasAttr = function(attribute) {
-		var exists;
-		this.each(function() {
+	$.fn.hasAttr = attribute => {
+		let exists;
+		this.each(() => {
 			if (attribute) exists = $(this).attr(attribute) !== null;
 		});
 		return exists;
@@ -37,8 +37,8 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.removeAttr = function(attribute) {
-		this.each(function() {
+	$.fn.removeAttr = attribute => {
+		this.each(() => {
 			if (attribute) this.removeAttribute(attribute);
 		});
 		return this;

@@ -4,10 +4,10 @@
  * @returns {object} current instance of Grindstone
  */
 	
-	$.fn.each = function(callback) {
-		var set = this.set;
+	$.fn.each = callback => {
+		let set = this.set;
 		set = Array.prototype.slice.call(set);
-		set.forEach(function(item) {
+		set.forEach(item => {
 			callback.call(item);
 		});
 		return this;

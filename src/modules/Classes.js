@@ -4,9 +4,9 @@
  * @returns {boolean} true or false
  */
 
-	$.fn.hasClass = function(cls) {
-		var hasCls;
-		this.each(function() {
+	$.fn.hasClass = cls => {
+		let hasCls;
+		this.each(() => {
 			hasCls = this.classList.contains(cls);
 		});
 		return hasCls;
@@ -18,11 +18,11 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.addClass = function(cls) {
-		var classes = cls.split(' ');
-		this.each(function() {
-			var self = this;
-			classes.forEach(function(clsName) {
+	$.fn.addClass = cls => {
+		const classes = cls.split(' ');
+		this.each(() => {
+			const self = this;
+			classes.forEach(clsName => {
 				self.classList.add(clsName);
 			});
 		});
@@ -35,11 +35,11 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.removeClass = function(cls) {
-		var classes = cls.split(' ');
-		this.each(function() {
-			var self = this;
-			classes.forEach(function(clsName) {
+	$.fn.removeClass = cls => {
+		const classes = cls.split(' ');
+		this.each(() => {
+			const self = this;
+			classes.forEach(clsName => {
 				self.classList.remove(clsName);
 			});
 		});
@@ -52,11 +52,11 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.toggleClass = function(cls) {
-		var classes = cls.split(' ');
-		this.each(function() {
-			var self = this;
-			classes.forEach(function(clsName) {
+	$.fn.toggleClass = cls => {
+		const classes = cls.split(' ');
+		this.each(() => {
+			const self = this;
+			classes.forEach(clsName => {
 				self.classList.toggle(clsName);
 			});
 		});

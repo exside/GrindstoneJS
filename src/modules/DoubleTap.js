@@ -4,18 +4,18 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.doubleTap = function(callback) {
-		var active, interaction;
-		this.each(function() {
+	$.fn.doubleTap = callback => {
+		let active, int;
+		this.each(() => {
 			active = false;
-			interaction = 'ontouchend' in d ? 'touchend' : 'click';
-			$(this).on(interaction, function() {
+			int = priv.createInteraction('touchend', 'click');
+			$(this).on(int, () => {
 				if (active) {
 					callback();
 					return active = false;
 				}
 				active = true;
-				setTimeout(function() {
+				setTimeout(() => {
 					return active = false;
 				}, 350);
 			});

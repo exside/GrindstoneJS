@@ -4,14 +4,14 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.show = function(delay) {
+	$.fn.show = delay => {
 		if (delay) {
-			var self = this;
-			setTimeout(function() {
+			const self = this;
+			setTimeout(() => {
 				$.fn.show.call(self);
 			}, delay);
 		} else {
-			this.each(function() {
+			this.each(() => {
 				if (this.style.display === 'none') {
 					this.style.display = $(this).data('_prevdisplay') || '';
 					$(this).removeData('_prevdisplay');
@@ -27,18 +27,16 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.hide = function(delay) {
+	$.fn.hide = delay => {
 		if (delay) {
-			var self = this;
-			setTimeout(function() {
+			const self = this;
+			setTimeout(() => {
 				$.fn.hide.call(self);
 			}, delay);
 		} else {
-			this.each(function() {
+			this.each(() => {
 				if (this.style.display !== 'none') {
-					if (this.style.display) {
-						$(this).data('_prevdisplay', this.style.display);
-					}
+					if (this.style.display) $(this).data('_prevdisplay', this.style.display);
 					this.style.display = 'none';
 				}
 			});

@@ -4,18 +4,14 @@
  * @returns {boolean} true if at least one of the elements matches the given selector
  */
 
-	$.fn.is = function(filterBy) {
-		if (typeof filterBy === 'function') {
-            for (var i = 0; i < this.length; i++) {
-                if (filterBy.call(this[i], i, this[i])) {
-                    return true;
-                }
+	$.fn.is = filterBy => {
+        if (typeof filterBy === 'function') {
+            for (let i = 0; i < this.length; i++) {
+                if (filterBy.call(this[i], i, this[i])) return true;
             }
-		} else {
-            for (var i = 0; i < this.length; i++) {
-                if (this[i][priv.matchesFuncName](filterBy)) {
-                    return true;
-                }
+        } else {
+            for (let i = 0; i < this.length; i++) {
+                if (this[i][priv.matchesFuncName](filterBy)) return true;
             }
         }
 		return false;
@@ -27,13 +23,11 @@
  * @returns {object} Grindstone object of included values returned from the callback
  */
 
-	$.fn.map = function(callback) {
-        var newSet = $();
-        for (var i = 0; i < this.length; i++) {
-            var ret = callback.call(this[i]);
-            if (ret !== undefined && ret !== null) {
-                newSet.push(ret);
-            }
+	$.fn.map = callback => {
+        const newSet = $();
+        for (let i = 0; i < this.length; i++) {
+            let ret = callback.call(this[i]);
+            if (ret !== undefined && ret !== null) newSet.push(ret);
         }
         return newSet;
 	};
@@ -44,11 +38,9 @@
  * @returns {object} new instance of Grindstone with the reduced set of matching elements
  */
 
-	$.fn.filter = function(filterBy) {
-        return $.fn.map.call(this, function() {
-            if ($(this).is(filterBy)) {
-                return this;
-            }
+	$.fn.filter = filterBy => {
+        return $.fn.map.call(this, () => {
+            if ($(this).is(filterBy)) return this;
         });
 	};
 
@@ -58,11 +50,9 @@
  * @returns {boolean} new instance of Grindstone with the reduced set of not matching elements
  */
 
-	$.fn.not = function(filterBy) {
-        return $.fn.map.call(this, function() {
-            if (!$(this).is(filterBy)) {
-                return this;
-            }
+	$.fn.not = filterBy => {
+        return $.fn.map.call(this, () => {
+            if (!$(this).is(filterBy)) return this;
         });
 	};
 
@@ -71,16 +61,16 @@
  * @returns {object} new instance of Grindstone with the first element
  */
 
-    $.fn.first = function() {
+    $.fn.first = () => {
         return $(this.set[0]);
-    }
+    };
 
 /**
  * Get the last element
  * @returns {object} new instance of Grindstone with the last element
  */
 
-    $.fn.last = function() {
+    $.fn.last = () => {
         return $(this.set[this.set.length - 1]);
-    }
+    };
 

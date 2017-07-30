@@ -5,13 +5,13 @@
  * @returns {object|string} current instance of Grindstone or style value
  */
 
-	$.fn.css = function(styles, value) {
-		var returnedStyle, returnStyle;
-		this.each(function() {
+	$.fn.css = (styles, value) => {
+		let returnedStyle, returnStyle;
+		this.each(() => {
 			if (typeof styles === 'object') {
-				var self = this;
-				var stl = Object.keys(styles);
-				stl.forEach(function(key) {
+				const self = this;
+				const stl = Object.keys(styles);
+				stl.forEach((key) => {
 					self.style[key] = styles[key];
 				});
 			} else if (typeof styles === 'string' && (value === undefined || value === null)) {

@@ -4,18 +4,18 @@
  * @returns {object} current instance of Grindstone
  */
 
-	$.fn.remove = function(target) {
+	$.fn.remove = target => {
 		if (target) {
-			var elems = d.querySelectorAll(target);
+			let elems = d.querySelectorAll(target);
 			elems = Array.prototype.slice.call(elems);
-			this.each(function() {
-				var self = this;
-				elems.forEach(function(el) {
+			this.each(() => {
+				const self = this;
+				elems.forEach(el => {
 					self.removeChild(el);
 				});
 			});
 		} else {
-			this.each(function() {
+			this.each(() => {
 				this.parentNode.removeChild(this);
 			});
 		}

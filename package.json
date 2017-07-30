@@ -1,11 +1,11 @@
 {
   "name": "grindstone",
-  "version": "2.2.0",
-  "main": "dist/grindstone-v2.2.0.min.js",
-  "homepage": "http://grindstonejs.drzwebdev.com",
+  "version": "3.0.0",
+  "main": "dist/grindstone-v3.0.0.min.js",
+  "homepage": "https://grindstonejs.drzwebdev.com",
   "author": {
     "name": "Dan Zervoudakes",
-    "url": "http://drzwebdev.com"
+    "url": "https://drzwebdev.com"
   },
   "repository": {
     "type": "git",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-header": "^1.8.2",

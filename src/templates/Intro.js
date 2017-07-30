@@ -1,3 +1,3 @@
-(function(w, d) {
+((w, d) => {
 
 'use strict';
