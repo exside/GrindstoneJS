@@ -1,4 +1,1 @@
-//(function(w, d) {
-
-    // @TODO: HAVE THIS CLOSURE BUILT DYNAMICALLY W/ BABEL AND REMOVE THE PHYSICAL INTRO/OUTRO FILES
-    
+(function(w, d) {

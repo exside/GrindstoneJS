@@ -8,8 +8,8 @@
 
 		if (classes && typeof classes !== 'object') throw new Error('Classes parameter for mouseable() must be an object with properties "hoverClass" and/or "activeClass".');
 
-		let hoverClass  = classes && classes.hasOwnProperty('hoverClass')  ? classes['hoverClass']  : 'over';
-		let activeClass = classes && classes.hasOwnProperty('activeClass') ? classes['activeClass'] : 'down';
+		const hoverClass  = classes && classes.hasOwnProperty('hoverClass')  ? classes['hoverClass']  : 'over';
+		const activeClass = classes && classes.hasOwnProperty('activeClass') ? classes['activeClass'] : 'down';
 		
 		const events = {
 			hover:  priv.createInteraction('touchstart', 'mouseenter'),
