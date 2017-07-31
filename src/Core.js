@@ -1,8 +1,5 @@
-/** @module Core */
-
 /**
  * @function Grindstone
- * @memberof Core
  * @param {string|object} selector
  * @param {string|object} context optional
  * @returns {object} Grindstone

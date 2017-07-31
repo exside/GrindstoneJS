@@ -1,8 +1,5 @@
-	/** @module Ajax */
-
 	/**
 	 * @method ajax
-	 * @memberof Ajax
 	 * @param {object} opts required, you may adhere to the default properties by passing in a blank object
 	 * @returns {object} XMLHttpRequest
 	 * @example

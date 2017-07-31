@@ -6,15 +6,12 @@ const $ = require('gulp-load-plugins')();
 const banners = {
 	max: [
 		'/**',
-		' * Grindstone JavaScript Library',
+		` * Grindstone JavaScript Library v${pkg.version}`,
 		` * ${pkg.repository.url}`,
 		' * ',
 		` * Copyright (c) 2014, ${new Date().getFullYear()} ${pkg.author.name} and contributors`,
 		' * Released under the MIT license',
 		` * ${pkg.repository.url}/blob/master/LICENSE`,
-		' * ',
-		' * @name Grindstone',
-		` * @version ${pkg.version}`,
 		' */',
 		'\n'
 	].join('\n'),
