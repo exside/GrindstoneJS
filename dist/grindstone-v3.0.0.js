@@ -16,7 +16,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	// TODO: BUILD THE INTRO AND OUTRO DYNAMICALLY
 	// TODO: MAKE SURE JSDOC COMMENTS TAB CORRECTLY AT TIME OF TRANSPILE
 	// TODO: UPDATE THE UI FOR GENERATED DOCUMENTATION
-	// TODO: MAKE JSDOC GENERATE ADEQUATE DOCS
 
 	/** @namespace Core */
 
