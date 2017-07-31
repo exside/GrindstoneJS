@@ -114,9 +114,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	/**
   * @method ajax
-  * @param {object} opts
+  * @param {object} opts required, you may adhere to the default properties by passing in a blank object
   * @returns {object} XMLHttpRequest
-  * @example $.ajax({ opts: 'values' });
+  * @example
+  * $.ajax({});
+  * $.ajax({ opts: 'values' });
   * @description
   * Submit a GET or POST AJAX request.
   * Acceptable properties of "opts" are:
