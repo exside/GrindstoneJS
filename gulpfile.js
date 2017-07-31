@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const pkg = require('./package.json');
+const jsDocConf = require('./.jsdoc.json');
 const $ = require('gulp-load-plugins')();
 
 // banners for output files
@@ -55,10 +56,10 @@ gulp.task('clean-docs', () => {
 // generate documentation
 gulp.task('jsdoc', ['clean-docs'], () => {
 	return gulp.src(`./dist/${pkg.name}-v${pkg.version}.js`)
-		.pipe($.jsdoc('./documentation'));
+		.pipe($.jsdoc3(jsDocConf));
 });
 
-// watch for changes
+// watch for changes and execute the 'build' task
 gulp.task('watch', () => {
 	gulp.watch('./src/**/*.js', () => {
 		gulp.run('build');
