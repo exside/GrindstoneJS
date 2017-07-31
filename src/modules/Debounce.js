@@ -1,5 +1,8 @@
+	/** @namespace Debounce */
+	
 	/**
 	 * @method debounce
+	 * @memberof Debounce
 	 * @param {function} fn function to debounce
 	 * @param {number} wait delay in ms
 	 * @param {boolean} immediate invoke immediately, optional

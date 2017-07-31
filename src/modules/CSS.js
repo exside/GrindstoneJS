@@ -1,5 +1,8 @@
+	/** @namespace CSS */
+	
 	/**
 	 * @method css
+	 * @memberof CSS
 	 * @param {object|string} styles object with style properties or single style in a string
 	 * @param {string} value new style value to apply
 	 * @returns {object|string} current instance of Grindstone or style value

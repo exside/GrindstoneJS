@@ -1,5 +1,8 @@
+	/** @namespace Remove */
+	
 	/**
 	 * @method remove
+	 * @memberof Remove
 	 * @param {object} target element(s), optional
 	 * @returns {object} current instance of Grindstone
 	 * @example

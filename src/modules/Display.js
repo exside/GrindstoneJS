@@ -1,5 +1,8 @@
+	/** @namespace Display */
+	
 	/**
 	 * @method show
+	 * @memberof Display
 	 * @param {delay} delay ms, optional
 	 * @returns {object} current instance of Grindstone
 	 * @example
@@ -27,6 +30,7 @@
 
 	/**
 	 * @method hide
+	 * @memberof Display
 	 * @param {delay} delay ms, optional
 	 * @returns {object} current instance of Grindstone
 	 * @example

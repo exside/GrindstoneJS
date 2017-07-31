@@ -1,5 +1,8 @@
+	/** @namespace Wrap */
+	
 	/**
 	 * @method wrap
+	 * @memberof Wrap
 	 * @param {string} structure
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').wrap('<section class="outside"><div class="middle"><div class="inner">');
@@ -20,6 +23,7 @@
 
 	/**
 	 * @method wrapInner
+	 * @memberof Wrap
 	 * @param {string} structure
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').wrapInner('<section class="outside"><div class="middle"><div class="inner">');

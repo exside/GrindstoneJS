@@ -1,5 +1,8 @@
+	/** @namespace ReplaceWith */
+	
 	/**
 	 * @method replaceWith
+	 * @memberof ReplaceWith
 	 * @param {object|string} content
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').replaceWith('<p>Hello World</p>');

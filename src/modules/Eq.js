@@ -1,5 +1,8 @@
+	/** @namespace Eq */
+	
 	/**
 	 * @method eq
+	 * @memberof Eq
 	 * @param {number} index
 	 * @returns {object} new set in a Grindstone instance containing the specified element
 	 * @example $('.selector').eq(2);

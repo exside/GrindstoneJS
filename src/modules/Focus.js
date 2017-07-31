@@ -1,5 +1,8 @@
+	/** @namespace Focus */
+	
 	/**
 	 * @method focus
+	 * @memberof Focus
 	 * @param {function} callback optional
 	 * @returns {object} current instance of Grindstone
 	 * @example

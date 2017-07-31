@@ -1,5 +1,8 @@
+	/** @namespace Events */
+
 	/**
 	 * @method on
+	 * @memberof Events
 	 * @param {string} action event(s)
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
@@ -22,6 +25,7 @@
 
 	/**
 	 * @method off
+	 * @memberof Events
 	 * @param {string} action event(s)
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone

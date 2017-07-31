@@ -1,5 +1,8 @@
+	/** @namespace Trigger */
+	
 	/**
 	 * @method trigger
+	 * @memberof Trigger
 	 * @param {number} evt custom event
 	 * @returns {object|number} current instance of Grindstone or top offset
 	 * @example $('#selector').trigger('myEvent');

@@ -1,5 +1,8 @@
+	/** @namespace DoubleTap */
+	
 	/**
 	 * @method doubleTap
+	 * @memberof DoubleTap
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').doubleTap(function(){});

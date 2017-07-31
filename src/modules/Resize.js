@@ -1,5 +1,8 @@
+	/** @namespace Resize */
+	
 	/**
 	 * @method resize
+	 * @memberof Resize
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
 	 * @example $(window).resize(function(){});

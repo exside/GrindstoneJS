@@ -1,5 +1,8 @@
+	/** @namespace Scroll */
+	
 	/**
 	 * @method scroll
+	 * @memberof Scroll
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
 	 * @example $(window).scroll(function(){});
@@ -17,6 +20,7 @@
  
 	/**
 	 * @method scrollTop
+	 * @memberof Scroll
 	 * @param {number} top offset in px, optional
 	 * @returns {object|number} current instance of Grindstone or top offset
 	 * @example
@@ -58,6 +62,7 @@
 
 	/**
 	 * @method scrollLeft
+	 * @memberof Scroll
 	 * @param {number} left offset in px, optional
 	 * @returns {object|number} current instance of Grindstone or left offset
 	 * @example

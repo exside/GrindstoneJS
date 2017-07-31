@@ -1,5 +1,8 @@
+	/** @namespace Append */
+	
 	/**
 	 * @method append
+	 * @memberof Append
 	 * @param {object|string} element
 	 * @returns {object} current instance of Grindstone
 	 * @example

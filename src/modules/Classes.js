@@ -1,5 +1,8 @@
+	/** @namespace Classes */
+	
 	/**
 	 * @method hasClass
+	 * @memberof Classes
 	 * @param {string} cls className
 	 * @returns {boolean}
 	 * @example $('#selector').hasClass('example');
@@ -16,6 +19,7 @@
 
 	/**
 	 * @method addClass
+	 * @memberof Classes
 	 * @param {string} cls className
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').addClass('example');
@@ -35,6 +39,7 @@
 
 	/**
 	 * @method removeClass
+	 * @memberof Classes
 	 * @param {string} cls className
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').removeClass('example');
@@ -54,6 +59,7 @@
 
 	/**
 	 * @method toggleClass
+	 * @memberof Classes
 	 * @param {string} cls className
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').toggleClass('example');

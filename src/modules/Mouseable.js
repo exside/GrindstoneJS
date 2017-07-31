@@ -1,5 +1,8 @@
+	/** @namespace Mouseable */
+	
 	/**
 	 * @method mouseable
+	 * @memberof Mouseable
 	 * @param {object} classes optional
 	 * @returns {object} current instance of Grindstone
 	 * @example

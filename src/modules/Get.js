@@ -1,5 +1,8 @@
+	/** @namespace Get */
+	
 	/**
 	 * @method get
+	 * @memberof Get
 	 * @param {number} index
 	 * @returns {object} the DOM element
 	 * @example $('.selector').get(2);

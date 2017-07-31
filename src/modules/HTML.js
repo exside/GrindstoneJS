@@ -1,5 +1,8 @@
+	/** @namespace HTML */
+	
 	/**
 	 * @method html
+	 * @memberof HTML
 	 * @param {string} content optional
 	 * @returns {object|string} current instance of Grindstone or current innerHTML of an element
 	 * @example

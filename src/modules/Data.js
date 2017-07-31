@@ -1,5 +1,8 @@
+	/** @namespace Data */
+	
 	/**
 	 * @method data
+	 * @memberof Data
 	 * @param {string} valueName
 	 * @param {string} newValue optional
 	 * @returns {object|string} current instance of Grindstone or the current data-value of an element
@@ -26,6 +29,7 @@
 
 	/**
 	 * @method removeData
+	 * @memberof Data
 	 * @param {string} valueName
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').removeData('name');

@@ -1,5 +1,8 @@
+    /** @namespace Filtering */
+    
     /**
      * @method is
+     * @memberof Filtering
      * @param {string|function} filterBy selector or callback function, return true to include
      * @returns {boolean} true if at least one of the elements matches the given selector
      * @example $('.selector').is('.visible');
@@ -21,6 +24,7 @@
 
     /**
      * @method map
+     * @memberof Filtering
      * @param {function} callback return the value to be included, or null or undefined to skip
      * @returns {object} Grindstone object of included values returned from the callback
      * @example $(array).map(function(){});
@@ -38,6 +42,7 @@
 
     /**
      * @method filter
+     * @memberof Filtering
      * @param {string|function} filterBy selector or callback function, return true to include
      * @returns {object} new instance of Grindstone with the reduced set of matching elements
      * @example $('.selector').filter('.visible');
@@ -52,6 +57,7 @@
 
     /**
      * @method not
+     * @memberof Filtering
      * @param {string|function} filterBy selector or callback function, return true to include
      * @returns {object} new instance of Grindstone with the reduced set of not matching elements
      * @example $('.selector').not('.hidden');
@@ -66,6 +72,7 @@
 
     /**
      * @method first
+     * @memberof Filtering
      * @returns {object} new instance of Grindstone with the first element of the original set
      * @example $('.selector').first();
      * @description Get the first element.
@@ -77,6 +84,7 @@
 
     /**
      * @method last
+     * @memberof Filtering
      * @returns {object} new instance of Grindstone with the last element of the original set
      * @example $('.selector').last();
      * @description Get the last element.

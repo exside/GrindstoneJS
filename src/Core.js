@@ -1,16 +1,16 @@
-/** @namespace Core */
+	/** @namespace Core */
 
-/**
- * @function Grindstone
- * @memberof Core
- * @param {string|object} selector
- * @param {string|object} context optional
- * @returns {object} Grindstone
- * @example
- * $('.selector');
- * $('.selector', '#container');
- * @description Create new instances of our constructor.
- */
+	/**
+	 * @function Grindstone
+	 * @memberof Core
+	 * @param {string|object} selector
+	 * @param {string|object} context optional
+	 * @returns {object} Grindstone
+	 * @example
+	 * $('.selector');
+	 * $('.selector', '#container');
+	 * @description Create new instances of our constructor using familiar, jQuery-style syntax.
+	 */
 	
 	const Grindstone = function(selector, context) {
 		const set = this;

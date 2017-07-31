@@ -1,5 +1,8 @@
+	/** @namespace Ready */
+	
 	/**
 	 * @method ready
+	 * @memberof Ready
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
 	 * @example $(document).ready(function(){});
@@ -17,6 +20,7 @@
 
 	/**
 	 * @method load
+	 * @memberof Ready
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
 	 * @example $(window).load(function(){});

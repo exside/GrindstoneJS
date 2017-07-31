@@ -1,5 +1,5 @@
 	/** @namespace Ajax */	
-
+	
 	/**
 	 * @method ajax
 	 * @memberof Ajax

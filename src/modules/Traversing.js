@@ -1,5 +1,8 @@
+	/** @namespace Traversing */
+	
 	/**
 	 * @method parent
+	 * @memberof Traversing
 	 * @param {string} selector only get the parent if it matches the selector, optional
 	 * @returns {object} parent element as a new instance of Grindstone
 	 * @example
@@ -14,6 +17,7 @@
 
 	/**
 	 * @method next
+	 * @memberof Traversing
 	 * @param {string} selector only get the element if it matches the selector, optional
 	 * @returns {object} next element as a new instance of Grindstone
 	 * @example
@@ -28,6 +32,7 @@
 
 	/**
 	 * @method prev
+	 * @memberof Traversing
 	 * @param {string} selector only get the element if it matches the selector, optional
 	 * @returns {object} previous element as a new instance of Grindstone
 	 * @example
@@ -42,6 +47,7 @@
 
 	/**
 	 * @method children
+	 * @memberof Traversing
 	 * @param {string} selector only get the elements if they match the selector, optional
 	 * @returns {object} child elements as a new instance of Grindstone
 	 * @example
@@ -56,6 +62,7 @@
 
 	/**
 	 * @method contents
+	 * @memberof Traversing
 	 * @returns {object} contents as a new instance of Grindstone
 	 * @example $('#selector').contents();
 	 * @description Get all the children as a Grindstone object, including text and comments.

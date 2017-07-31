@@ -1,5 +1,8 @@
+	/** @namespace Dimensions */
+	
 	/**
 	 * @method height
+	 * @memberof Dimensions
 	 * @param {number} num px, optional
 	 * @returns {object|number} current instance of Grindstone or current height of the first element in the set
 	 * @example
@@ -28,6 +31,7 @@
 
 	/**
 	 * @method width
+	 * @memberof Dimensions
 	 * @param {number} num px, optional
 	 * @returns {object|number} current instance of Grindstone or current width of the first element in the set
 	 * @example

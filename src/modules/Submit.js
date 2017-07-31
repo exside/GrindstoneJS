@@ -1,5 +1,8 @@
+	/** @namespace Submit */
+	
 	/**
 	 * @method submit
+	 * @memberof Submit
 	 * @param {function} callback optional
 	 * @returns {object} current instance of Grindstone
 	 * @example

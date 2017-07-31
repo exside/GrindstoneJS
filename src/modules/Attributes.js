@@ -1,5 +1,8 @@
+	/** @namespace Attributes */
+	
 	/**
 	 * @method attr
+	 * @memberof Attributes
 	 * @param {string} attribute
 	 * @param {string} value optional
 	 * @returns {object|string} current instance of Grindstone or attribute value
@@ -23,6 +26,7 @@
 
 	/**
 	 * @method hasAttr
+	 * @memberof Attributes
 	 * @param {string} attribute
 	 * @returns {boolean}
 	 * @example $('#selector').hasAttr('example');
@@ -39,6 +43,7 @@
 
 	/**
 	 * @method removeAttr
+	 * @memberof Attributes
 	 * @param {string} attribute
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').removeAttr('example');

@@ -1,5 +1,8 @@
+	/** @namespace Offset */
+	
 	/**
 	 * @method offset
+	 * @memberof Offset
 	 * @param {string} position 'left' or 'top'
 	 * @returns {number} offset value in px
 	 * @example

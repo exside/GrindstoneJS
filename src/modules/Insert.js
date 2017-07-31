@@ -1,5 +1,8 @@
+	/** @namespace Insert */
+	
 	/**
 	 * @method before
+	 * @memberof Insert
 	 * @param {string|object} content
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').before('<p>Hello World</p>');
@@ -28,6 +31,7 @@
 
 	/**
 	 * @method after
+	 * @memberof Insert
 	 * @param {string|object} content
 	 * @returns {object} current instance of Grindstone
 	 * @example $('#selector').after('<p>Hello World</p>');

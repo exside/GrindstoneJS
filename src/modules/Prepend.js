@@ -1,5 +1,8 @@
+	/** @namespace Prepend */
+	
 	/**
 	 * @method prepend
+	 * @memberof Prepend
 	 * @param {object|string} element
 	 * @returns {object} current instance of Grindstone
 	 * @example
