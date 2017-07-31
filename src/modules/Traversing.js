@@ -1,7 +1,11 @@
 	/**
-	 * Get the parent element as a Grindstone object
-	 * @param {string} selector - only get the parent if it matches the selector, optional
-	 * @returns {object} parents instance of Grindstone
+	 * @method parent
+	 * @param {string} selector only get the parent if it matches the selector, optional
+	 * @returns {object} parent element as a new instance of Grindstone
+	 * @example
+	 * $('#selector').parent();
+	 * $('#selector').parent('.selector');
+	 * @description Get the parent element as a Grindstone object.
 	 */
 
 	$.fn.parent = function(selector) {
@@ -9,9 +13,13 @@
 	};
 
 	/**
-	 * Get the next element as a Grindstone object
-	 * @param {string} selector - only get the element if it matches the selector, optional
-	 * @returns {object} instance of Grindstone
+	 * @method next
+	 * @param {string} selector only get the element if it matches the selector, optional
+	 * @returns {object} next element as a new instance of Grindstone
+	 * @example
+	 * $('#selector').next();
+	 * $('#selector').next('.selector');
+	 * @description Get the next element as a Grindstone object.
 	 */
 
 	$.fn.next = function(selector) {
@@ -19,9 +27,13 @@
 	};
 
 	/**
-	 * Get the previous element as a Grindstone object
-	 * @param {string} selector - only get the element if it matches the selector, optional
-	 * @returns {object} instance of Grindstone
+	 * @method prev
+	 * @param {string} selector only get the element if it matches the selector, optional
+	 * @returns {object} previous element as a new instance of Grindstone
+	 * @example
+	 * $('#selector').prev();
+	 * $('#selector').prev('.selector');
+	 * @description Get the previous element as a Grindstone object.
 	 */
 
 	$.fn.prev = function(selector) {
@@ -29,9 +41,13 @@
 	};
 
 	/**
-	 * Get the child elements as a Grindstone object
-	 * @param {string} selector - only get the elements if they match the selector, optional
-	 * @returns {object} children instance of Grindstone
+	 * @method children
+	 * @param {string} selector only get the elements if they match the selector, optional
+	 * @returns {object} child elements as a new instance of Grindstone
+	 * @example
+	 * $('#selector').children();
+	 * $('#selector').children('.selector');
+	 * @description Get the child elements as a Grindstone object.
 	 */
 
 	$.fn.children = function(selector) {
@@ -39,8 +55,10 @@
 	};
 
 	/**
-	 * Get all the children as a Grindstone object, including text and comments
-	 * @returns {object} children instance of Grindstone
+	 * @method contents
+	 * @returns {object} contents as a new instance of Grindstone
+	 * @example $('#selector').contents();
+	 * @description Get all the children as a Grindstone object, including text and comments.
 	 */
 
 	$.fn.contents = function() {

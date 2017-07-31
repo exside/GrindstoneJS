@@ -1,7 +1,9 @@
     /**
-     * Check if any of the elements match the given selector or callback function
-     * @param {string|function} filterBy - selector or callback function, return true to include
+     * @method is
+     * @param {string|function} filterBy selector or callback function, return true to include
      * @returns {boolean} true if at least one of the elements matches the given selector
+     * @example $('.selector').is('.visible');
+     * @description Check if any of the elements match the given selector or callback function.
      */
 
 	$.fn.is = function(filterBy) {
@@ -18,9 +20,11 @@
 	};
 
     /**
-     * Map each element to an array of values
-     * @param {function} callback - return the value to be included, or null or undefined to skip
+     * @method map
+     * @param {function} callback return the value to be included, or null or undefined to skip
      * @returns {object} Grindstone object of included values returned from the callback
+     * @example $(array).map(function(){});
+     * @description Map each element to an array of values.
      */
 
 	$.fn.map = function(callback) {
@@ -33,9 +37,11 @@
 	};
 
     /**
-     * Filter the elements by the selector or callback function
-     * @param {string|function} filterBy - selector or callback function, return true to include
+     * @method filter
+     * @param {string|function} filterBy selector or callback function, return true to include
      * @returns {object} new instance of Grindstone with the reduced set of matching elements
+     * @example $('.selector').filter('.visible');
+     * @description Filter the elements by the selector or callback function.
      */
 
 	$.fn.filter = function(filterBy) {
@@ -45,9 +51,11 @@
 	};
 
     /**
-     * Excludes matching elements and includes non-matching elements
-     * @param {string|function} filterBy - selector or callback function, return true to include
-     * @returns {boolean} new instance of Grindstone with the reduced set of not matching elements
+     * @method not
+     * @param {string|function} filterBy selector or callback function, return true to include
+     * @returns {object} new instance of Grindstone with the reduced set of not matching elements
+     * @example $('.selector').not('.hidden');
+     * @description Excludes matching elements and includes non-matching elements.
      */
 
 	$.fn.not = function(filterBy) {
@@ -57,8 +65,10 @@
 	};
 
     /**
-     * Get the first element
-     * @returns {object} new instance of Grindstone with the first element
+     * @method first
+     * @returns {object} new instance of Grindstone with the first element of the original set
+     * @example $('.selector').first();
+     * @description Get the first element.
      */
 
     $.fn.first = function() {
@@ -66,8 +76,10 @@
     };
 
     /**
-     * Get the last element
-     * @returns {object} new instance of Grindstone with the last element
+     * @method last
+     * @returns {object} new instance of Grindstone with the last element of the original set
+     * @example $('.selector').last();
+     * @description Get the last element.
      */
 
     $.fn.last = function() {

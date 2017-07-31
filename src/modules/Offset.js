@@ -1,7 +1,11 @@
 	/**
-	 * Return the left or top value of the selector, relative to the document
-	 * @param {string} position - "left" or "top"
+	 * @method offset
+	 * @param {string} position 'left' or 'top'
 	 * @returns {number} offset value in px
+	 * @example
+	 * $('#selector').offset('left');
+	 * $('#selector').offset('right');
+	 * @description Return the left or top value of the selector, relative to the document.
 	 */
 
 	$.fn.offset = function(position) {

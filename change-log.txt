@@ -251,7 +251,7 @@ v2.2.0
 - Minor tweaks
 - Clone all the elements in the set, return the new Grindstone object
 
-Date: 7/30/17
+Date: 7/31/17
 Changes Current Version: YES
 Contributor(s): dzervoudakes
 

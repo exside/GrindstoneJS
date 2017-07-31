@@ -1,7 +1,9 @@
 	/**
-	 * Capture the scroll event and execute a function
+	 * @method scroll
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
+	 * @example $(window).scroll(function(){});
+	 * @description Listen for the scroll event and trigger a function.
 	 */
 
 	$.fn.scroll = function(callback) {
@@ -14,10 +16,15 @@
 	};
  
 	/**
-	 * Scroll an element to a specific top position relative to its another parent container
-	 * Return the current top offset of an element, relative to its parent container
-	 * @param {number} top - offset in px, optional
+	 * @method scrollTop
+	 * @param {number} top offset in px, optional
 	 * @returns {object|number} current instance of Grindstone or top offset
+	 * @example
+	 * $('#selector').scrollTop();
+	 * $('#selector').scrollTop(50);
+	 * @description
+	 * Scroll an element to a specific top position relative to its another parent container.
+	 * Return the current top offset of an element, relative to its parent container.
 	 */
 
 	$.fn.scrollTop = function(top) {
@@ -50,10 +57,15 @@
 	};
 
 	/**
-	 * Scroll an element to a specific left position relative to its another parent container
-	 * Return the current left offset of an element, relative to its parent container
-	 * @param {number} left - offset in px, optional
+	 * @method scrollLeft
+	 * @param {number} left offset in px, optional
 	 * @returns {object|number} current instance of Grindstone or left offset
+	 * @example
+	 * $('#selector').scrollLeft();
+	 * $('#selector').scrollLeft(50);
+	 * @description
+	 * Scroll an element to a specific left position relative to its another parent container.
+	 * Return the current left offset of an element, relative to its parent container.
 	 */
 
 	$.fn.scrollLeft = function(left) {

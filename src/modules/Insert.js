@@ -1,7 +1,9 @@
 	/**
-	 * Insert new content before a target element
+	 * @method before
 	 * @param {string|object} content
 	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').before('<p>Hello World</p>');
+	 * @description Insert new content before a target element.
 	 */
 
 	$.fn.before = function(content) {
@@ -25,9 +27,11 @@
 	};
 
 	/**
-	 * Insert new content after a target element
+	 * @method after
 	 * @param {string|object} content
 	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').after('<p>Hello World</p>');
+	 * @description Insert new content after a target element.
 	 */
 
 	$.fn.after = function(content) {

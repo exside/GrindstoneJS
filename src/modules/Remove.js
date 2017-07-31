@@ -1,7 +1,11 @@
 	/**
-	 * Remove elements from the DOM
-	 * @param {object} target - target element(s), optional: if omitted, the element(s) invoking this method will be removed
+	 * @method remove
+	 * @param {object} target element(s), optional
 	 * @returns {object} current instance of Grindstone
+	 * @example
+	 * $('#selector').remove();
+	 * $('#selector').remove('.selector');
+	 * @description Remove elements from the DOM.
 	 */
 
 	$.fn.remove = function(target) {

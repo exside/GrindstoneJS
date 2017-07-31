@@ -1,7 +1,9 @@
 	/**
-	 * Dispatch a custom event
-	 * @param {number} evt - custom event
+	 * @method trigger
+	 * @param {number} evt custom event
 	 * @returns {object|number} current instance of Grindstone or top offset
+	 * @example $('#selector').trigger('myEvent');
+	 * @description Dispatch a custom event.
 	 */
 
 	$.fn.trigger = function(evt) {

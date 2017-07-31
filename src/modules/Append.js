@@ -1,7 +1,11 @@
 	/**
-	 * Append a new child element to the current object
-	 * @param {string|object} element
+	 * @method append
+	 * @param {object|string} element
 	 * @returns {object} current instance of Grindstone
+	 * @example
+	 * $('#selector').append('#element');
+	 * $('#selector').append('<p>Hello World</p>');
+	 * @description Append a new element or new content.
 	 */
 
 	$.fn.append = function(element) {

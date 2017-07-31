@@ -1,7 +1,11 @@
 	/**
-	 * Submit a form or trigger a function when a form is submitted
-	 * @param {function} callback - optional
+	 * @method submit
+	 * @param {function} callback optional
 	 * @returns {object} current instance of Grindstone
+	 * @example
+	 * $('#selector').submit();
+	 * $('#selector').submit(function(){});
+	 * @description Submit a form or trigger a function when a form is submitted.
 	 */
 	
 	$.fn.submit = function(callback) {

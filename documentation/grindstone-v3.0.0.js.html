@@ -1,4 +1,31 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: grindstone-v3.0.0.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: grindstone-v3.0.0.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * Grindstone JavaScript Library v3.0.0
  * https://github.com/dzervoudakes/GrindstoneJS
  * 
@@ -9,7 +36,7 @@
 
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" &amp;&amp; typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj &amp;&amp; typeof Symbol === "function" &amp;&amp; obj.constructor === Symbol &amp;&amp; obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 (function (w, d) {
 
@@ -75,7 +102,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	var priv = {
 		children: function children(set, nodeType, selector) {
 			var newSet = $();
-			for (var i = 0; i < set.length; i++) {
+			for (var i = 0; i &lt; set.length; i++) {
 				for (var child = set[i].firstChild; child; child = child.nextSibling) {
 					if (nodeType === undefined || nodeType === child.nodeType) {
 						if (!selector || $(child).is(selector)) newSet.push(child);
@@ -168,14 +195,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @returns {object} current instance of Grindstone
   * @example
   * $('#selector').append('#element');
-  * $('#selector').append('<p>Hello World</p>');
+  * $('#selector').append('&lt;p>Hello World&lt;/p>');
   * @description Append a new element or new content.
   */
 
 	$.fn.append = function (element) {
 		this.each(function () {
 			if (typeof element === 'string') {
-				if (element.match(/(<).+(>)/)) {
+				if (element.match(/(&lt;).+(>)/)) {
 					this.innerHTML += element;
 				} else {
 					var self = this;
@@ -268,7 +295,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				stl.forEach(function (key) {
 					self.style[key] = styles[key];
 				});
-			} else if (typeof styles === 'string' && (value === undefined || value === null)) {
+			} else if (typeof styles === 'string' &amp;&amp; (value === undefined || value === null)) {
 				returnedStyle = this.style[styles];
 				returnStyle = true;
 			} else if (typeof styles === 'string') {
@@ -424,7 +451,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				timeout = null;
 				if (!immediate) fn.apply(context, args);
 			};
-			var callNow = immediate && !timeout;
+			var callNow = immediate &amp;&amp; !timeout;
 			clearTimeout(timeout);
 			timeout = setTimeout(later, wait);
 			if (callNow) fn.apply(context, args);
@@ -654,11 +681,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	$.fn.is = function (filterBy) {
 		if (typeof filterBy === 'function') {
-			for (var i = 0; i < this.length; i++) {
+			for (var i = 0; i &lt; this.length; i++) {
 				if (filterBy.call(this[i], i, this[i])) return true;
 			}
 		} else {
-			for (var _i = 0; _i < this.length; _i++) {
+			for (var _i = 0; _i &lt; this.length; _i++) {
 				if (this[_i][priv.matchesFuncName](filterBy)) return true;
 			}
 		}
@@ -675,9 +702,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	$.fn.map = function (callback) {
 		var newSet = $();
-		for (var i = 0; i < this.length; i++) {
+		for (var i = 0; i &lt; this.length; i++) {
 			var ret = callback.call(this[i]);
-			if (ret !== undefined && ret !== null) newSet.push(ret);
+			if (ret !== undefined &amp;&amp; ret !== null) newSet.push(ret);
 		}
 		return newSet;
 	};
@@ -771,7 +798,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @returns {object|string} current instance of Grindstone or current innerHTML of an element
   * @example
   * $('#selector').html();
-  * $('#selector').html('<p>Hello World</p>');
+  * $('#selector').html('&lt;p>Hello World&lt;/p>');
   * @description Replace an element's innerHTML or return the current innerHTML.
   */
 
@@ -791,14 +818,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @method before
   * @param {string|object} content
   * @returns {object} current instance of Grindstone
-  * @example $('#selector').before('<p>Hello World</p>');
+  * @example $('#selector').before('&lt;p>Hello World&lt;/p>');
   * @description Insert new content before a target element.
   */
 
 	$.fn.before = function (content) {
 		this.each(function () {
 			if (typeof content === 'string') {
-				if (content.match(/(<).+(>)/)) {
+				if (content.match(/(&lt;).+(>)/)) {
 					this.insertAdjacentHTML('beforebegin', content);
 				} else {
 					var self = this;
@@ -819,14 +846,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @method after
   * @param {string|object} content
   * @returns {object} current instance of Grindstone
-  * @example $('#selector').after('<p>Hello World</p>');
+  * @example $('#selector').after('&lt;p>Hello World&lt;/p>');
   * @description Insert new content after a target element.
   */
 
 	$.fn.after = function (content) {
 		this.each(function () {
 			if (typeof content === 'string') {
-				if (content.match(/(<).+(>)/)) {
+				if (content.match(/(&lt;).+(>)/)) {
 					this.insertAdjacentHTML('afterend', content);
 				} else {
 					var self = this;
@@ -855,10 +882,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	$.fn.mouseable = function (classes) {
 
-		if (classes && (typeof classes === 'undefined' ? 'undefined' : _typeof(classes)) !== 'object') throw new Error('Classes parameter for mouseable() must be an object with properties "hoverClass" and/or "activeClass".');
+		if (classes &amp;&amp; (typeof classes === 'undefined' ? 'undefined' : _typeof(classes)) !== 'object') throw new Error('Classes parameter for mouseable() must be an object with properties "hoverClass" and/or "activeClass".');
 
-		var hoverClass = classes && classes.hasOwnProperty('hoverClass') ? classes['hoverClass'] : 'over';
-		var activeClass = classes && classes.hasOwnProperty('activeClass') ? classes['activeClass'] : 'down';
+		var hoverClass = classes &amp;&amp; classes.hasOwnProperty('hoverClass') ? classes['hoverClass'] : 'over';
+		var activeClass = classes &amp;&amp; classes.hasOwnProperty('activeClass') ? classes['activeClass'] : 'down';
 
 		var events = {
 			hover: priv.createInteraction('touchstart', 'mouseenter'),
@@ -895,8 +922,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   */
 
 	$.fn.offset = function (position) {
-		if (position && typeof position === 'string') {
-			if (position !== 'left' && position !== 'top') {
+		if (position &amp;&amp; typeof position === 'string') {
+			if (position !== 'left' &amp;&amp; position !== 'top') {
 				throw new Error('offset() position must be either "left" or "top".');
 			} else {
 				var el = this.set[0];
@@ -925,14 +952,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @returns {object} current instance of Grindstone
   * @example
   * $('#selector').prepend('#element');
-  * $('#selector').prepend('<p>Hello World</p>');
+  * $('#selector').prepend('&lt;p>Hello World&lt;/p>');
   * @description Prepend a new element or new content.
   */
 
 	$.fn.prepend = function (element) {
 		this.each(function () {
 			if (typeof element === 'string') {
-				if (element.match(/(<).+(>)/)) {
+				if (element.match(/(&lt;).+(>)/)) {
 					this.insertAdjacentHTML('afterbegin', element);
 				} else {
 					var self = this;
@@ -1015,7 +1042,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @method replaceWith
   * @param {object|string} content
   * @returns {object} current instance of Grindstone
-  * @example $('#selector').replaceWith('<p>Hello World</p>');
+  * @example $('#selector').replaceWith('&lt;p>Hello World&lt;/p>');
   * @description Replace an element with some other content.
   */
 
@@ -1259,7 +1286,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   */
 
 	$.fn.val = function (newValue) {
-		if (newValue && typeof newValue === 'string') {
+		if (newValue &amp;&amp; typeof newValue === 'string') {
 			this.each(function () {
 				this.value = newValue;
 			});
@@ -1273,7 +1300,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @method wrap
   * @param {string} structure
   * @returns {object} current instance of Grindstone
-  * @example $('#selector').wrap('<section class="outside"><div class="middle"><div class="inner">');
+  * @example $('#selector').wrap('&lt;section class="outside">&lt;div class="middle">&lt;div class="inner">');
   * @description Wrap the outer structure of the set of elements.
   */
 
@@ -1293,7 +1320,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @method wrapInner
   * @param {string} structure
   * @returns {object} current instance of Grindstone
-  * @example $('#selector').wrapInner('<section class="outside"><div class="middle"><div class="inner">');
+  * @example $('#selector').wrapInner('&lt;section class="outside">&lt;div class="middle">&lt;div class="inner">');
   * @description Wrap the inner structure of the set of elements.
   */
 
@@ -1310,4 +1337,26 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	return w.Grindstone = w.$ = $;
-})(window, document);
+})(window, document);</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Sun Jul 30 2017 19:07:51 GMT-0600 (MDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

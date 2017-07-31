@@ -46,6 +46,12 @@ gulp.task('uglify', ['concat'], () => {
 		.pipe(gulp.dest('dist'));
 });
 
+// generate documentation
+gulp.task('jsdoc', () => {
+	return gulp.src(`dist/${pkg.name}-v${pkg.version}.js`)
+		.pipe($.jsdoc('./documentation'));
+});
+
 // watch for changes
 gulp.task('watch', () => {
 	gulp.watch('src/**/*.js', () => {

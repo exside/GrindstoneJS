@@ -1,7 +1,9 @@
 	/**
-	 * Wrap the outer structure of the set of elements
-	 * @param {string} structure - HTML structure, opening tags only
+	 * @method wrap
+	 * @param {string} structure
 	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').wrap('<section class="outside"><div class="middle"><div class="inner">');
+	 * @description Wrap the outer structure of the set of elements.
 	 */
 
 	$.fn.wrap = function(structure) {
@@ -17,9 +19,11 @@
 	};
 
 	/**
-	 * Wrap the inner structure of the set of elements
-	 * @param {string} structure - HTML structure, opening tags only
+	 * @method wrapInner
+	 * @param {string} structure
 	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').wrapInner('<section class="outside"><div class="middle"><div class="inner">');
+	 * @description Wrap the inner structure of the set of elements.
 	 */
 	
 	$.fn.wrapInner = function(structure) {

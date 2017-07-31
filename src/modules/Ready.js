@@ -1,7 +1,9 @@
 	/**
-	 * Trigger a function when the DOM content is loaded
+	 * @method ready
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
+	 * @example $(document).ready(function(){});
+	 * @description Trigger a function when the DOM content is loaded.
 	 */
 
 	$.fn.ready = function(callback) {
@@ -14,9 +16,11 @@
 	};
 
 	/**
-	 * Trigger a function on the load event
+	 * @method load
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
+	 * @example $(window).load(function(){});
+	 * @description Trigger a function on the load event.
 	 */
 
 	$.fn.load = function(callback) {

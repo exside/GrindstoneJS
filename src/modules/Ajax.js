@@ -1,8 +1,10 @@
 	/**
-	 * Submit a GET or POST AJAX request
-	 * @param {object} - { properties => values }
-	 * @returns {object} xmlhttp
-	 * 
+	 * @method ajax
+	 * @param {object} opts
+	 * @returns {object} XMLHttpRequest
+	 * @example $.ajax({ opts: 'values' });
+	 * @description
+	 * Submit a GET or POST AJAX request.
 	 * Acceptable properties of "opts" are:
 	 * - method (GET or POST)
 	 * - url (data path)

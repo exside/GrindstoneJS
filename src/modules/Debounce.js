@@ -1,9 +1,11 @@
 	/**
-	 * Debounce a given function
-	 * @param {function} fn - function to debounce
-	 * @param {number} wait - wait time in milliseconds
-	 * @param {boolean} immediate - invoke immediately?
-	 * @returns {function} invoke debounce
+	 * @method debounce
+	 * @param {function} fn function to debounce
+	 * @param {number} wait delay in ms
+	 * @param {boolean} immediate invoke immediately, optional
+	 * @returns {function}
+	 * @example $.debounce(function(){}, 300);
+	 * @description Debounce a given function.
 	 */
 
 	$.debounce = function(fn, wait, immediate) {

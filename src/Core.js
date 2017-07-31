@@ -1,8 +1,12 @@
 /**
- * Library core: constructor, prototype
+ * @function Grindstone
  * @param {string|object} selector
- * @param {string|object} context - optional
+ * @param {string|object} context optional
  * @returns {object} Grindstone
+ * @example
+ * $('.selector');
+ * $('.selector', '#container');
+ * @description Create new instances of our constructor.
  */
 	
 	const Grindstone = function(selector, context) {

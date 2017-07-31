@@ -1,7 +1,11 @@
 	/**
-	 * Replace an element's inner HTML or return the current value
-	 * @param {string} content - optional
-	 * @returns {object|string} current instance of Grindstone or current value of an element's inner HTML
+	 * @method html
+	 * @param {string} content optional
+	 * @returns {object|string} current instance of Grindstone or current innerHTML of an element
+	 * @example
+	 * $('#selector').html();
+	 * $('#selector').html('<p>Hello World</p>');
+	 * @description Replace an element's innerHTML or return the current innerHTML.
 	 */
 
 	$.fn.html = function(content) {

@@ -1,7 +1,10 @@
 	/**
-	 * Trigger a function by double-tapping or double-clicking
+	 * @method doubleTap
 	 * @param {function} callback
 	 * @returns {object} current instance of Grindstone
+	 * @example
+	 * $('#selector').doubleTap(function(){});
+	 * @description Trigger a function by double-tapping or double-clicking.
 	 */
 
 	$.fn.doubleTap = function(callback) {

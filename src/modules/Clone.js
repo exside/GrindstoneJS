@@ -1,6 +1,8 @@
 	/**
-	 * Clone the elements in the set
-	 * @returns {object} the cloned elements as a new instance of Grindstone
+	 * @method clone
+	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').clone();
+	 * @description Clone the elements in the set.
 	 */
  
 	$.fn.clone = function() {

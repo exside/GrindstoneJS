@@ -1,7 +1,9 @@
 	/**
-	 * Determine if the elements have the specified class
-	 * @param {string} cls - className
-	 * @returns {boolean} true or false
+	 * @method hasClass
+	 * @param {string} cls className
+	 * @returns {boolean}
+	 * @example $('#selector').hasClass('example');
+	 * @description Determine if the elements have the specified class.
 	 */
 
 	$.fn.hasClass = function(cls) {
@@ -13,9 +15,11 @@
 	};
 
 	/**
-	 * Add a class to the current set of elements
-	 * @param {string} cls - className
+	 * @method addClass
+	 * @param {string} cls className
 	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').addClass('example');
+	 * @description Add a class to the current set of elements.
 	 */
 
 	$.fn.addClass = function(cls) {
@@ -30,9 +34,11 @@
 	};
 
 	/**
-	 * Remove a class from the current set of elements
-	 * @param {string} cls - className
+	 * @method removeClass
+	 * @param {string} cls className
 	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').removeClass('example');
+	 * @description Remove a class from the current set of elements.
 	 */
 
 	$.fn.removeClass = function(cls) {
@@ -47,9 +53,11 @@
 	};
 
 	/**
-	 * Toggle the specified class
-	 * @param {string} cls - className
+	 * @method toggleClass
+	 * @param {string} cls className
 	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').toggleClass('example');
+	 * @description Toggle the specified class.
 	 */
 
 	$.fn.toggleClass = function(cls) {

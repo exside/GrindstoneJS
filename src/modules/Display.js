@@ -1,7 +1,11 @@
 	/**
-	 * Show a set of hidden elements
-	 * @param {delay} delay - in milliseconds, optional
+	 * @method show
+	 * @param {delay} delay ms, optional
 	 * @returns {object} current instance of Grindstone
+	 * @example
+	 * $('#selector').show();
+	 * $('#selector').show(100);
+	 * @description Show a set of hidden elements.
 	 */
 
 	$.fn.show = function(delay) {
@@ -22,9 +26,13 @@
 	};
 
 	/**
-	 * Hide a set of elements
-	 * @param {delay} delay - in milliseconds, optional
+	 * @method hide
+	 * @param {delay} delay ms, optional
 	 * @returns {object} current instance of Grindstone
+	 * @example
+	 * $('#selector').hide();
+	 * $('#selector').hide(100);
+	 * @description Hide a set of elements.
 	 */
 
 	$.fn.hide = function(delay) {

@@ -1,8 +1,13 @@
 	/**
-	 * Adjust the styles of selected elements or return the requested value
-	 * @param {object|string} styles - style properties
-	 * @param {string} value - style value
+	 * @method css
+	 * @param {object|string} styles object with style properties or single style in a string
+	 * @param {string} value new style value to apply
 	 * @returns {object|string} current instance of Grindstone or style value
+	 * @example
+	 * $('#selector').style('display');
+	 * $('#selector').style('display', 'block');
+	 * $('#selector').style({ display: 'block', color: 'red' });
+	 * @description Adjust the styles of selected elements or return the requested value.
 	 */
 
 	$.fn.css = function(styles, value) {

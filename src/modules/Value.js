@@ -1,7 +1,11 @@
 	/**
-	 * Return or assign the value of an element
-	 * @param {string} newValue - optional
+	 * @method val
+	 * @param {string} newValue optional
 	 * @returns {object|string} current instance of Grindstone or the value of the first element in the set
+	 * @example
+	 * $('#selector').val();
+	 * $('#selector').val('7');
+	 * @description Return or assign the value of an element.
 	 */
 
 	$.fn.val = function(newValue) {

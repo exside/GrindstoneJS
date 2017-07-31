@@ -1,8 +1,12 @@
 	/**
-	 * Set or return the value of the specified attribute
+	 * @method attr
 	 * @param {string} attribute
-	 * @param {string} value - optional
+	 * @param {string} value optional
 	 * @returns {object|string} current instance of Grindstone or attribute value
+	 * @example
+	 * $('#selector').attr('example');
+	 * $('#selector').attr('example', 'test');
+	 * @description Set or return the value of the specified attribute.
 	 */
 
 	$.fn.attr = function(attribute, value) {
@@ -18,9 +22,11 @@
 	};
 
 	/**
-	 * Determine if the current element has the specified attribute
+	 * @method hasAttr
 	 * @param {string} attribute
-	 * @returns {boolean} true or false
+	 * @returns {boolean}
+	 * @example $('#selector').hasAttr('example');
+	 * @description Determine if the current element has the specified attribute.
 	 */
 
 	$.fn.hasAttr = function(attribute) {
@@ -32,9 +38,11 @@
 	};
 
 	/**
-	 * Remove the the specified attribute
+	 * @method removeAttr
 	 * @param {string} attribute
 	 * @returns {object} current instance of Grindstone
+	 * @example $('#selector').removeAttr('example');
+	 * @description Remove the the specified attribute.
 	 */
 
 	$.fn.removeAttr = function(attribute) {
