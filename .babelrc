@@ -1,4 +1,4 @@
 {
-  "presets": ["es2015-script"],
-  "plugins": ["transform-strict-mode"]
+  "plugins": ["transform-strict-mode"],
+  "presets": ["es2015-script"]
 }
