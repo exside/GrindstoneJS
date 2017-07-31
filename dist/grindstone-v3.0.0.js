@@ -15,10 +15,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	// TODO: BUILD THE INTRO AND OUTRO DYNAMICALLY
 	// TODO: MAKE SURE JSDOC COMMENTS TAB CORRECTLY AT TIME OF TRANSPILE
-	// TODO: MAKE JSDOC WORK (and add @module and/or @memberOf to all the things)
+	// TODO: UPDATE THE UI FOR GENERATED DOCUMENTATION
+	// TODO: MAKE JSDOC GENERATE ADEQUATE DOCS
+
+	/** @namespace Core */
 
 	/**
   * @function Grindstone
+  * @memberof Core
   * @param {string|object} selector
   * @param {string|object} context optional
   * @returns {object} Grindstone
@@ -112,8 +116,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		matchesFuncName: Element.prototype.matches ? 'matches' : Element.prototype.matchesSelector ? 'matchesSelector' : Element.prototype.webkitMatchesSelector ? 'webkitMatchesSelector' : Element.prototype.mozMatchesSelector ? 'mozMatchesSelector' : Element.prototype.msMatchesSelector ? 'msMatchesSelector' : undefined
 	};
 
+	/** @namespace Ajax */
+
 	/**
   * @method ajax
+  * @memberof Ajax
   * @param {object} opts required, you may adhere to the default properties by passing in a blank object
   * @returns {object} XMLHttpRequest
   * @example
