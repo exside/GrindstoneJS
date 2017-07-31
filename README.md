@@ -22,6 +22,10 @@ GrindstoneJS does not aim to "replace" jQuery or reinvent the wheel... it is mer
 
 ### Documentation/Examples
 
+```
+gulp jsdoc
+```
+
 ##### $()
 
 _Create a new instance of the "Grindstone" object and allow method chaining on DOM elements._

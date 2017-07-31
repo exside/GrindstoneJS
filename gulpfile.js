@@ -6,12 +6,15 @@ const $ = require('gulp-load-plugins')();
 const banners = {
 	max: [
 		'/**',
-		` * Grindstone JavaScript Library v${pkg.version}`,
+		' * Grindstone JavaScript Library',
 		` * ${pkg.repository.url}`,
 		' * ',
 		` * Copyright (c) 2014, ${new Date().getFullYear()} ${pkg.author.name} and contributors`,
 		' * Released under the MIT license',
 		` * ${pkg.repository.url}/blob/master/LICENSE`,
+		' * ',
+		' * @name Grindstone',
+		` * @version ${pkg.version}`,
 		' */',
 		'\n'
 	].join('\n'),
@@ -30,31 +33,37 @@ gulp.task('clean', () => {
 
 // concatenate and transpile all the things
 gulp.task('concat', ['clean'], () => {
-	return gulp.src(['src/templates/Intro.js', 'src/Core.js', 'src/modules/*.js', 'src/templates/Outro.js'])
+	return gulp.src(['./src/templates/Intro.js', './src/Core.js', './src/modules/*.js', './src/templates/Outro.js'])
 		.pipe($.concat(`${pkg.name}-v${pkg.version}.js`))
 		.pipe($.babel())
 		.pipe($.header(banners.max))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('./dist'));
 });
 
 // uglify it
 gulp.task('uglify', ['concat'], () => {
-	return gulp.src(`dist/${pkg.name}-v${pkg.version}.js`)
+	return gulp.src(`./dist/${pkg.name}-v${pkg.version}.js`)
 		.pipe($.uglify())
 		.pipe($.header(banners.min))
 		.pipe($.rename(`${pkg.name}-v${pkg.version}.min.js`))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest('./dist'));
+});
+
+// clean documentation
+gulp.task('clean-docs', () => {
+	return gulp.src('./documentation', { read: false })
+		.pipe($.clean({ force: true }));
 });
 
 // generate documentation
-gulp.task('jsdoc', () => {
-	return gulp.src(`dist/${pkg.name}-v${pkg.version}.js`)
+gulp.task('jsdoc', ['clean-docs'], () => {
+	return gulp.src(`./dist/${pkg.name}-v${pkg.version}.js`)
 		.pipe($.jsdoc('./documentation'));
 });
 
 // watch for changes
 gulp.task('watch', () => {
-	gulp.watch('src/**/*.js', () => {
+	gulp.watch('./src/**/*.js', () => {
 		gulp.run('build');
 	});
 });

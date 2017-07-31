@@ -1,24 +1,28 @@
 /**
- * Grindstone JavaScript Library v3.0.0
+ * Grindstone JavaScript Library
  * https://github.com/dzervoudakes/GrindstoneJS
  * 
  * Copyright (c) 2014, 2017 Dan Zervoudakes and contributors
  * Released under the MIT license
  * https://github.com/dzervoudakes/GrindstoneJS/blob/master/LICENSE
+ * 
+ * @name Grindstone
+ * @version 3.0.0
  */
 
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-(function (w, d) {
-
 	// TODO: BUILD THE INTRO AND OUTRO DYNAMICALLY
 	// TODO: MAKE SURE JSDOC COMMENTS TAB CORRECTLY AT TIME OF TRANSPILE
-	// TODO: MAKE JSDOC WORK
+	// TODO: MAKE JSDOC WORK (and add @module and/or @memberOf to all the things)
+
+	/** @module Core */
 
 	/**
   * @function Grindstone
+  * @memberof Core
   * @param {string|object} selector
   * @param {string|object} context optional
   * @returns {object} Grindstone
@@ -112,8 +116,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		matchesFuncName: Element.prototype.matches ? 'matches' : Element.prototype.matchesSelector ? 'matchesSelector' : Element.prototype.webkitMatchesSelector ? 'webkitMatchesSelector' : Element.prototype.mozMatchesSelector ? 'mozMatchesSelector' : Element.prototype.msMatchesSelector ? 'msMatchesSelector' : undefined
 	};
 
+	/** @module Ajax */
+
 	/**
   * @method ajax
+  * @memberof Ajax
   * @param {object} opts required, you may adhere to the default properties by passing in a blank object
   * @returns {object} XMLHttpRequest
   * @example
@@ -548,8 +555,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   * @method doubleTap
   * @param {function} callback
   * @returns {object} current instance of Grindstone
-  * @example
-  * $('#selector').doubleTap(function(){});
+  * @example $('#selector').doubleTap(function(){});
   * @description Trigger a function by double-tapping or double-clicking.
   */
 
@@ -1310,6 +1316,3 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		});
 		return this;
 	};
-
-	return w.Grindstone = w.$ = $;
-})(window, document);
