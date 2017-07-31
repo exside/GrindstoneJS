@@ -60,122 +60,8 @@
 <li>Opera 10.0+</li>
 <li>Mobile</li>
 </ul>
-<h3>Documentation/Examples</h3><pre class="prettyprint source"><code>gulp jsdoc</code></pre><h5>$()</h5><p><em>Create a new instance of the &quot;Grindstone&quot; object and allow method chaining on DOM elements.</em></p>
-<pre class="prettyprint source"><code>$(selector [, context]);</code></pre><h5>$.fn</h5><p><em>&quot;Grindstone.prototype&quot;: Use this to create new methods/modules.</em></p>
-<pre class="prettyprint source"><code>(function($) {
-
-    $.fn.newMethod = function() {
-
-        // vars go up here
-
-        this.each(function() {
-            // loop through the current set of elements
-            // within this loop, &quot;this&quot; now refers to the current element
-        });
-
-        return this;
-    };
-
-})(Grindstone);</code></pre><h5>ajax()</h5><p><em>Basic AJAX call for POST and GET requests.</em></p>
-<ul>
-<li>method</li>
-<li>url</li>
-<li>async</li>
-<li>success</li>
-<li>error</li>
-<li>header</li>
-<li>headerValue</li>
-</ul>
-<pre class="prettyprint source"><code>$.ajax({ properties: values });</code></pre><h5>append()</h5><p><em>Append a new child element to the current object. New content can be either HTML input as a string or existing DOM elements.</em></p>
-<pre class="prettyprint source"><code>$(selector).append(content);</code></pre><h5>attr()</h5><p><em>Set or return the value of the specified attribute.</em></p>
-<pre class="prettyprint source"><code>$(selector).attr(attribute [, value]);</code></pre><h5>hasAttr()</h5><p><em>Check to see if the specified element has the specified attribute.</em></p>
-<pre class="prettyprint source"><code>$(selector).hasAttr(attribute); => returns &quot;true&quot; or &quot;false&quot;</code></pre><h5>removeAttr()</h5><p><em>Remove the specified attribute.</em></p>
-<pre class="prettyprint source"><code>$(selector).removeAttr(attribute);</code></pre><h5>hasClass()</h5><p><em>Detect whether or not the target element has the specified class.</em></p>
-<pre class="prettyprint source"><code>$(selector).hasClass(class); => returns &quot;true&quot; or &quot;false&quot;</code></pre><h5>addClass()</h5><p><em>Add the specified class.</em></p>
-<pre class="prettyprint source"><code>$(selector).addClass(class);</code></pre><h5>removeClass()</h5><p><em>Remove the specified class.</em></p>
-<pre class="prettyprint source"><code>$(selector).removeClass(class);</code></pre><h5>toggleClass()</h5><p><em>Toggle the specified class.</em></p>
-<pre class="prettyprint source"><code>$(selector).toggleClass(class);</code></pre><h5>clone()</h5><p><em>Return an exact duplicate of the first element matching the selector, including its children.</em></p>
-<pre class="prettyprint source"><code>$(selector).clone();</code></pre><h5>css()</h5><p><em>Adjust the CSS styles of a selected element if an object is passed as the argument or if both the styles and value arguments are passed as strings.</em>
-<em>Return the specified CSS value if a string is passed as the styles argument and the value argument is null.</em></p>
-<pre class="prettyprint source"><code>$(selector).css({ properties: values });
-$(selector).css(property [, value]);
-$(selector).css(property);</code></pre><h5>data()</h5><p><em>Assign a data-value to a set of elements or return the current value of an element.</em></p>
-<pre class="prettyprint source"><code>$(selector).data(valueName [, valueContent]);</code></pre><h5>removeData()</h5><p><em>Remove a data-value from a set of elements.</em></p>
-<pre class="prettyprint source"><code>$(selector).removeData(valueName);</code></pre><h5>$.debounce()</h5><p><em>Debounce a given function.</em></p>
-<pre class="prettyprint source"><code>$.debounce(fn [, wait, immediate]);</code></pre><h5>height()</h5><p><em>Return the height value of the specified selector as an integer. To change the height (in px), enter in the &quot;num&quot; parameter.</em>
-<em>If simply returning the current height, this will only apply to the first match in the set and includes padding. Setting the height will apply to all elements in the set.</em></p>
-<pre class="prettyprint source"><code>$(selector).height();
-$(selector).height(number);</code></pre><h5>width()</h5><p><em>Return the width value of the specified selector as an integer. To change the width (in px), enter in the &quot;num&quot; parameter.</em>
-<em>If simply returning the current width, this will only apply to the first match in the set and includes padding. Setting the width will apply to all elements in the set.</em></p>
-<pre class="prettyprint source"><code>$(selector).width();
-$(selector).width(number);</code></pre><h5>show()</h5><p><em>Show a hidden element, instantly or delayed.</em></p>
-<pre class="prettyprint source"><code>$(selector).show();
-$(selector).show(delay);</code></pre><h5>hide()</h5><p><em>Hide a visible element, instantly or delayed.</em></p>
-<pre class="prettyprint source"><code>$(selector).hide();
-$(selector).hide(delay);</code></pre><h5>doubleTap()</h5><p><em>Custom double-tapping/double-clicking method.</em></p>
-<pre class="prettyprint source"><code>$(selector).doubleTap(callback);</code></pre><h5>each()</h5><p><em>Iterate through each item in the set and execute the callback.</em></p>
-<pre class="prettyprint source"><code>$(selector).each(callback);</code></pre><h5>eq()</h5><p><em>Return the DOM element at the specified index of the current as a new instance of Grindstone.</em></p>
-<pre class="prettyprint source"><code>$(selector).eq(index);</code></pre><h5>on()</h5><p><em>Add event listeners.</em></p>
-<pre class="prettyprint source"><code>$(selector).on(event[s], callback);</code></pre><h5>off()</h5><p><em>Remove event listeners.</em></p>
-<pre class="prettyprint source"><code>$(selector).off(event[s], callback);</code></pre><h5>is()</h5><p><em>Check if any of the elements match the given selector or callback function.</em></p>
-<pre class="prettyprint source"><code>$(selector).is(filterBy);</code></pre><h5>map()</h5><p><em>Map each element to an array of values.</em></p>
-<pre class="prettyprint source"><code>$(selector).map(callback);</code></pre><h5>filter()</h5><p><em>Filter the elements by the selector or callback function.</em></p>
-<pre class="prettyprint source"><code>$(selector).filter(filterBy);</code></pre><h5>not()</h5><p><em>Excludes matching elements and includes non-matching elements.</em></p>
-<pre class="prettyprint source"><code>$(selector).not(filterBy);</code></pre><h5>first()</h5><p><em>Get the first element.</em></p>
-<pre class="prettyprint source"><code>$(selector).first();</code></pre><h5>last()</h5><p><em>Get the last element.</em></p>
-<pre class="prettyprint source"><code>$(selector).last();</code></pre><h5>focus()</h5><p><em>Focus on the first element in the set or trigger a function when some element is focused upon.</em></p>
-<pre class="prettyprint source"><code>$(selector).focus();
-$(selector).focus(callback);</code></pre><h5>get()</h5><p><em>Return the DOM element at the specified index of the current set.</em></p>
-<pre class="prettyprint source"><code>$(selector).get(index);</code></pre><h5>html()</h5><p><em>Return the selected element's innerHTML, or replace it if the &quot;content&quot; argument is entered.</em></p>
-<pre class="prettyprint source"><code>$(selector).html();
-$(selector).html(content);</code></pre><h5>before()</h5><p><em>Insert new content before the target element. New content can be either HTML input as a string or existing DOM elements.</em></p>
-<pre class="prettyprint source"><code>$(selector).before(content);</code></pre><h5>after()</h5><p><em>Insert new content after the target element. New content can be either HTML input as a string or existing DOM elements.</em></p>
-<pre class="prettyprint source"><code>$(selector).after(content);</code></pre><h5>mouseable()</h5><p><em>Dynamically add class &quot;over&quot; to elements as a hover state (default). Dynamically add class &quot;down&quot; to elements as an active state (default).</em>
-<em>This removes the need for applicable CSS pseudo-states, and handles both standard mouse events and touch events.</em>
-<em>Developers may define their own hover/active classes with the optional &quot;classes&quot; object.</em></p>
-<pre class="prettyprint source"><code>$(selector).mouseable();
-$(selector).mouseable({hoverClass: 'hover', activeClass: 'active'});</code></pre><h5>offset()</h5><p><em>Return the left/top offset value of the specified selector relative to the document (as a number).</em>
-<em>This will only apply to the first match in the set and includes margins.</em></p>
-<pre class="prettyprint source"><code>$(selector).offset('left');
-$(selector).offset('top');</code></pre><h5>prepend()</h5><p><em>Insert a new element or content to the front of the target's childNode list.</em>
-<em>New content can be either HTML input as a string or existing DOM elements.</em></p>
-<pre class="prettyprint source"><code>$(selector).prepend(content);</code></pre><h5>ready()</h5><p><em>Trigger a callback when the DOM content of the selected element is loaded.</em></p>
-<pre class="prettyprint source"><code>$(selector).ready(callback);</code></pre><h5>load()</h5><p><em>Trigger a callback when the load event fires.</em></p>
-<pre class="prettyprint source"><code>$(selector).load(callback);</code></pre><h5>remove()</h5><p><em>Remove the specified child element from the current object if the target is specified.</em>
-<em>If no target is specified, the parent of the current node will remove the node from the DOM.</em></p>
-<pre class="prettyprint source"><code>$(selector).remove(target);
-$(selector).remove();</code></pre><h5>replaceWith()</h5><p><em>Replace the selected element contents with the specified content.</em></p>
-<pre class="prettyprint source"><code>$(selector).replaceWith(content);</code></pre><h5>resize()</h5><p><em>Capture the native resize event and execute a function each time the event triggers.</em></p>
-<pre class="prettyprint source"><code>$(selector).resize(callback);</code></pre><h5>scroll()</h5><p><em>Capture the native scroll event and execute a function each time the event triggers.</em></p>
-<pre class="prettyprint source"><code>$(selector).scroll(callback);</code></pre><h5>scrollTop()</h5><p><em>Return the scrollTop value of the given scrollable element if the &quot;top&quot; argument is not supplied.</em>
-<em>Scroll the element to a specific pixel value if the &quot;top&quot; argument is supplied.</em>
-<em>Scrolling overflow must be enabled on the selector.</em></p>
-<pre class="prettyprint source"><code>$(selector).scrollTop();
-$(selector).scrollTop(top);</code></pre><h5>scrollLeft()</h5><p><em>Return the scrollLeft value of the given scrollable element if the &quot;left&quot; argument is not supplied.</em>
-<em>Scroll the element to a specific pixel value if the &quot;left&quot; argument is supplied.</em>
-<em>Scrolling overflow must be enabled on the selector.</em></p>
-<pre class="prettyprint source"><code>$(selector).scrollLeft();
-$(selector).scrollLeft(left);</code></pre><h5>submit()</h5><p><em>Submit a form or trigger a function when a form is submitted.</em></p>
-<pre class="prettyprint source"><code>$(selector).submit();
-$(selector).submit(callback);</code></pre><h5>parent()</h5><p><em>Get the parent element as a Grindstone object.</em>
-<em>Only get the parent if it matches the selector (optional).</em></p>
-<pre class="prettyprint source"><code>$(selector).parent();
-$(selector).parent(parentSelector);</code></pre><h5>next()</h5><p><em>Get the next element as a Grindstone object.</em>
-<em>Only get the element if it matches the selector (optional).</em></p>
-<pre class="prettyprint source"><code>$(selector).next();
-$(selector).next(nextSelector);</code></pre><h5>prev()</h5><p><em>Get the previous element as a Grindstone object.</em>
-<em>Only get the element if it matches the selector (optional).</em></p>
-<pre class="prettyprint source"><code>$(selector).prev();
-$(selector).prev(prevSelector);</code></pre><h5>children()</h5><p><em>Get the child elements as a Grindstone object.</em>
-<em>Only get the elements if they match the selector (optional).</em></p>
-<pre class="prettyprint source"><code>$(selector).children();
-$(selector).children(childSelector);</code></pre><h5>contents()</h5><p><em>Get all the children as a Grindstone object, including text and comments.</em></p>
-<pre class="prettyprint source"><code>$(selector).contents();</code></pre><h5>trigger()</h5><p><em>Dispatch custom event listeners.</em></p>
-<pre class="prettyprint source"><code>$(selector).trigger(customEvent);</code></pre><h5>val()</h5><p><em>Return or assign the value of an element - works best on form inputs.</em></p>
-<pre class="prettyprint source"><code>$(selector).val();
-$(selector).val(newValue);</code></pre><h5>wrap()</h5><p><em>Wrap the outer structure of the selected element(s).</em></p>
-<pre class="prettyprint source"><code>$(selector).wrap(structure); => use opening tags only</code></pre><h5>wrapInner()</h5><p><em>Wrap the inner structure of the selected element(s).</em></p>
-<pre class="prettyprint source"><code>$(selector).wrapInner(structure); => use opening tags only</code></pre></article>
+<h3>Documentation</h3><p>For documentation and examples, please refer to the website or run the following command:</p>
+<pre class="prettyprint source"><code>gulp jsdoc</code></pre></article>
     </section>
 
 
@@ -188,7 +74,7 @@ $(selector).val(newValue);</code></pre><h5>wrap()</h5><p><em>Wrap the outer stru
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Mon Jul 31 2017 12:26:48 GMT-0600 (MDT) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Mon Jul 31 2017 12:56:13 GMT-0600 (MDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
