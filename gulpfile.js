@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const pkg = require('./package.json');
-const jsDocConf = require('./.jsdoc.json');
+const jsDocConf = require('./jsdoc.json');
 const $ = require('gulp-load-plugins')();
 
 // banners for output files
@@ -48,13 +48,13 @@ gulp.task('uglify', ['concat'], () => {
 });
 
 // clean documentation
-gulp.task('clean-docs', () => {
+gulp.task('clean-jsdoc', () => {
 	return gulp.src('./documentation', { read: false })
 		.pipe($.clean({ force: true }));
 });
 
 // generate documentation
-gulp.task('jsdoc', ['clean-docs'], () => {
+gulp.task('jsdoc', ['clean-jsdoc'], () => {
 	return gulp.src(`./dist/${pkg.name}-v${pkg.version}.js`)
 		.pipe($.jsdoc3(jsDocConf));
 });
